@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32630.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicBrokerCaja", "DynamicBrokerCaja.csproj", "{14247644-89C7-402F-B595-B99EB8C61174}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14247644-89C7-402F-B595-B99EB8C61174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14247644-89C7-402F-B595-B99EB8C61174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14247644-89C7-402F-B595-B99EB8C61174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14247644-89C7-402F-B595-B99EB8C61174}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F23685DE-0AD4-4DCE-A873-4EE70F32514D}
+	EndGlobalSection
+EndGlobal

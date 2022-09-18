@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DynamicBrokerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Caja">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaHoraApertura" Type="datetime" Nullable="false" />
+    <Property Name="FechaHoraCierre" Type="datetime" />
+    <Property Name="Apertura" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Cierre" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="FechaBaja" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApellidoNombre" Type="varchar" MaxLength="200" />
+    <Property Name="DNI" Type="varchar" MaxLength="200" />
+    <Property Name="FechaNac" Type="date" />
+    <Property Name="Domicilio" Type="varchar" MaxLength="200" />
+    <Property Name="Telefono" Type="varchar" MaxLength="50" />
+    <Property Name="EstadoCivilId" Type="int" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="200" />
+    <Property Name="ActividadComercial" Type="varchar" MaxLength="200" />
+    <Property Name="CondFiscalId" Type="int" Nullable="false" />
+    <Property Name="CUITCUIL" Type="varchar" MaxLength="50" />
+    <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+    <Property Name="fechabaja" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CondFiscal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EstadoCivil">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EstadoPlanillaRendicion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MedioPago">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Movimiento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoMovId" Type="int" Nullable="false" />
+    <Property Name="CajaId" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="FechaBaja" Type="datetime" />
+    <Property Name="Importe" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ReciboId" Type="int" />
+    <Property Name="MedioPagoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlanillaRendicionCobranza">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumPlanEmpresa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EstadoPlanillaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rama">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Recibo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RamaId" Type="int" Nullable="false" />
+    <Property Name="Poliza" Type="varchar" MaxLength="50" />
+    <Property Name="Endoso" Type="varchar" MaxLength="50" />
+    <Property Name="Importe" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Cuota" Type="varchar" MaxLength="50" />
+    <Property Name="Vencimiento" Type="datetime" />
+    <Property Name="ProxVto" Type="datetime" />
+    <Property Name="VtoConvenio" Type="datetime" />
+    <Property Name="CodigoBarra" Type="varchar" MaxLength="50" />
+    <Property Name="ClienteId" Type="int" />
+    <Property Name="PlanillaId" Type="int" />
+    <Property Name="FechaBaja" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TipoMovimientoCaja">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaBaja" Type="datetime" />
+    <Property Name="Locked" Type="bit" />
+  </EntityType>
+  <Association Name="FK_Cliente_CondFiscal">
+    <End Role="CondFiscal" Type="Self.CondFiscal" Multiplicity="1" />
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CondFiscal">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="CondFiscalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cliente_EstadoCivil">
+    <End Role="EstadoCivil" Type="Self.EstadoCivil" Multiplicity="1" />
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoCivil">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="EstadoCivilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movimiento_Caja">
+    <End Role="Caja" Type="Self.Caja" Multiplicity="1" />
+    <End Role="Movimiento" Type="Self.Movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Caja">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movimiento">
+        <PropertyRef Name="CajaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movimiento_MedioPago">
+    <End Role="MedioPago" Type="Self.MedioPago" Multiplicity="1" />
+    <End Role="Movimiento" Type="Self.Movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MedioPago">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movimiento">
+        <PropertyRef Name="MedioPagoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movimiento_Recibo">
+    <End Role="Recibo" Type="Self.Recibo" Multiplicity="0..1" />
+    <End Role="Movimiento" Type="Self.Movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recibo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movimiento">
+        <PropertyRef Name="ReciboId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movimiento_TipoMovimientoCaja">
+    <End Role="TipoMovimientoCaja" Type="Self.TipoMovimientoCaja" Multiplicity="1" />
+    <End Role="Movimiento" Type="Self.Movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoMovimientoCaja">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movimiento">
+        <PropertyRef Name="TipoMovId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlanillaRendicionCobranza_EstadoPlanillaRendicion">
+    <End Role="EstadoPlanillaRendicion" Type="Self.EstadoPlanillaRendicion" Multiplicity="1" />
+    <End Role="PlanillaRendicionCobranza" Type="Self.PlanillaRendicionCobranza" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoPlanillaRendicion">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PlanillaRendicionCobranza">
+        <PropertyRef Name="EstadoPlanillaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recibo_Cliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+    <End Role="Recibo" Type="Self.Recibo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Recibo">
+        <PropertyRef Name="ClienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recibo_PlanillaRendicionCobranza">
+    <End Role="PlanillaRendicionCobranza" Type="Self.PlanillaRendicionCobranza" Multiplicity="0..1" />
+    <End Role="Recibo" Type="Self.Recibo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlanillaRendicionCobranza">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Recibo">
+        <PropertyRef Name="PlanillaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recibo_Rama">
+    <End Role="Rama" Type="Self.Rama" Multiplicity="1" />
+    <End Role="Recibo" Type="Self.Recibo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rama">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Recibo">
+        <PropertyRef Name="RamaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DynamicBrokerModelStoreContainer">
+    <EntitySet Name="Caja" EntityType="Self.Caja" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CondFiscal" EntityType="Self.CondFiscal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EstadoCivil" EntityType="Self.EstadoCivil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EstadoPlanillaRendicion" EntityType="Self.EstadoPlanillaRendicion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MedioPago" EntityType="Self.MedioPago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Movimiento" EntityType="Self.Movimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlanillaRendicionCobranza" EntityType="Self.PlanillaRendicionCobranza" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rama" EntityType="Self.Rama" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recibo" EntityType="Self.Recibo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoMovimientoCaja" EntityType="Self.TipoMovimientoCaja" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Cliente_CondFiscal" Association="Self.FK_Cliente_CondFiscal">
+      <End Role="CondFiscal" EntitySet="CondFiscal" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cliente_EstadoCivil" Association="Self.FK_Cliente_EstadoCivil">
+      <End Role="EstadoCivil" EntitySet="EstadoCivil" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movimiento_Caja" Association="Self.FK_Movimiento_Caja">
+      <End Role="Caja" EntitySet="Caja" />
+      <End Role="Movimiento" EntitySet="Movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movimiento_MedioPago" Association="Self.FK_Movimiento_MedioPago">
+      <End Role="MedioPago" EntitySet="MedioPago" />
+      <End Role="Movimiento" EntitySet="Movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movimiento_Recibo" Association="Self.FK_Movimiento_Recibo">
+      <End Role="Recibo" EntitySet="Recibo" />
+      <End Role="Movimiento" EntitySet="Movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movimiento_TipoMovimientoCaja" Association="Self.FK_Movimiento_TipoMovimientoCaja">
+      <End Role="TipoMovimientoCaja" EntitySet="TipoMovimientoCaja" />
+      <End Role="Movimiento" EntitySet="Movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlanillaRendicionCobranza_EstadoPlanillaRendicion" Association="Self.FK_PlanillaRendicionCobranza_EstadoPlanillaRendicion">
+      <End Role="EstadoPlanillaRendicion" EntitySet="EstadoPlanillaRendicion" />
+      <End Role="PlanillaRendicionCobranza" EntitySet="PlanillaRendicionCobranza" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recibo_Cliente" Association="Self.FK_Recibo_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Recibo" EntitySet="Recibo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recibo_PlanillaRendicionCobranza" Association="Self.FK_Recibo_PlanillaRendicionCobranza">
+      <End Role="PlanillaRendicionCobranza" EntitySet="PlanillaRendicionCobranza" />
+      <End Role="Recibo" EntitySet="Recibo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recibo_Rama" Association="Self.FK_Recibo_Rama">
+      <End Role="Rama" EntitySet="Rama" />
+      <End Role="Recibo" EntitySet="Recibo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

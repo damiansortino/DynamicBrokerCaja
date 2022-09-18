@@ -1,0 +1,1 @@
+﻿00001	Error en el método "Comprobar caja abierta" dentro del View ControlCaja.
