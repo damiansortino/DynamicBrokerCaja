@@ -249,12 +249,74 @@ namespace DynamicBrokerCaja.Views
 
         private void dgvMovimientos_MouseClick(object sender, MouseEventArgs e)
         {
-            if (dgvMovimientos.SelectedRows.Count > 0) btnEditMov.Enabled = true;
+            if (dgvMovimientos.SelectedRows.Count > 0) btnDeleteMov.Enabled = true;
+        }
+        private void btnDeleteMov_Click(object sender, EventArgs e)
+        {
+            btnDeleteMov.Enabled = false;
+            
+            DialogResult result = MessageBox.Show("¿Está Seguro que desea eliminar este movimiento?", "Cancelar", MessageBoxButtons.YesNoCancel);
+
+            switch (result)
+            {
+                case DialogResult.Yes:
+                    int borrar = (int)dgvMovimientos.CurrentRow.Cells[0].Value;
+                    BorrarOperacion(borrar);
+                    MessageBox.Show("Movimiento eliminado exitosamente");
+
+                    break;
+                case DialogResult.No:
+                    
+                    break;
+                case DialogResult.Cancel:
+                    
+                    break;
+            }
         }
 
-        private void dgvMovimientos_Leave(object sender, EventArgs e)
+        private void BorrarOperacion(int borrar)
         {
-            btnEditMov.Enabled = false;
+            Recibo borrarrecibo = new Recibo();
+            Movimiento borramovimiento = new Movimiento();
+
+            using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
+            {
+                borramovimiento = DB.Movimiento.Find(borrar);
+                if (borramovimiento.TipoMovId == 8)
+                {
+                    borrarrecibo = DB.Recibo.Find(borramovimiento.ReciboId);
+                    BorrarRecibo(borrarrecibo);
+                    BorrarMovimiento(borramovimiento);
+                }
+                else
+                {
+                    BorrarMovimiento(borramovimiento);
+                }
+            }
+
+
+        }
+
+        private void BorrarMovimiento(Movimiento borramovimiento)
+        {
+            using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
+            {
+                Movimiento borrar = DB.Movimiento.Find(borramovimiento.Id);
+                borrar.FechaBaja = DateTime.Now;
+                DB.Entry(borrar).State = System.Data.Entity.EntityState.Modified;
+                DB.SaveChanges();
+            }
+        }
+
+        private void BorrarRecibo(Recibo borrarrecibo)
+        {
+            using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
+            {
+                Recibo borrar = DB.Recibo.Find(borrarrecibo.Id);
+                borrar.FechaBaja = DateTime.Now;
+                DB.Entry(borrar).State = System.Data.Entity.EntityState.Modified;
+                DB.SaveChanges();
+            }
         }
     }
 }

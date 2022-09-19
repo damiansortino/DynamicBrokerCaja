@@ -34,7 +34,7 @@ namespace DynamicBrokerCaja.Views
             using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
             {
                 montoactual = 0;
-                List<Movimiento> movimientos = DB.Movimiento.ToList().FindAll(x => x.CajaId == cajacerrar.Id);
+                List<Movimiento> movimientos = DB.Movimiento.ToList().FindAll(x => x.CajaId == cajacerrar.Id && x.FechaBaja == null);
                 foreach (Movimiento item in movimientos)
                 {
                     if (item.MedioPagoId == 1)

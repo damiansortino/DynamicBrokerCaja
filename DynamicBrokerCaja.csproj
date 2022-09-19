@@ -116,6 +116,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Views\CerrarCajaView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,14 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Views\CerrarCajaView.resx">
       <DependentUpon>CerrarCajaView.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,7 +215,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodigosDeError.txt" />
-    <None Include="img\edit_icon.jpg" />
+    <Content Include="img\iconDelete.png" />
     <Content Include="img\iconRefresh.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

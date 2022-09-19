@@ -4,6 +4,7 @@ namespace DynamicBrokerCaja.Models.Auxiliares
 {
     class MovimientosParaDGV
     {
+        public int IdMovimiento { get; set; }
         public DateTime Fecha { get; set; }
         public string Cliente { get; set; }
         public decimal Importe { get; set; }
@@ -26,7 +27,9 @@ namespace DynamicBrokerCaja.Models.Auxiliares
             Fecha = mov.Fecha;
             if (mov.TipoMovId == 8)
             {
+                // en esta línea se debe llamar al apellido y nombre del cliente
                 Cliente = "";
+
                 Cuota = movi.Recibo.Cuota;
             }
             else
@@ -39,7 +42,7 @@ namespace DynamicBrokerCaja.Models.Auxiliares
             TipoMov = movi.TipoMovimientoCaja.Nombre;
             Importe = mov.Importe;
             MedioPago = movi.MedioPago.Nombre;
-
+            IdMovimiento = movi.Id;
         }
     }
 }

@@ -63,9 +63,9 @@ namespace DynamicBrokerCaja.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap edit_icon {
+        internal static System.Drawing.Bitmap iconDelete {
             get {
-                object obj = ResourceManager.GetObject("edit_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("iconDelete", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
