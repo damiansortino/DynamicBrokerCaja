@@ -33,13 +33,16 @@ namespace DynamicBrokerCaja
             this.verCajasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarCobrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verCajasAnterioresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.carpetaDeInterfazParanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verCajasToolStripMenuItem});
+            this.verCajasToolStripMenuItem,
+            this.configuraciónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -52,8 +55,8 @@ namespace DynamicBrokerCaja
             this.gestionarCobrosToolStripMenuItem,
             this.verCajasAnterioresToolStripMenuItem});
             this.verCajasToolStripMenuItem.Name = "verCajasToolStripMenuItem";
-            this.verCajasToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.verCajasToolStripMenuItem.Text = "CAJA";
+            this.verCajasToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.verCajasToolStripMenuItem.Text = "Caja";
             // 
             // gestionarCobrosToolStripMenuItem
             // 
@@ -67,6 +70,21 @@ namespace DynamicBrokerCaja
             this.verCajasAnterioresToolStripMenuItem.Name = "verCajasAnterioresToolStripMenuItem";
             this.verCajasAnterioresToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.verCajasAnterioresToolStripMenuItem.Text = "VER CAJAS ANTERIORES";
+            // 
+            // configuraciónToolStripMenuItem
+            // 
+            this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.carpetaDeInterfazParanaToolStripMenuItem});
+            this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
+            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.configuraciónToolStripMenuItem.Text = "Configuración";
+            // 
+            // carpetaDeInterfazParanaToolStripMenuItem
+            // 
+            this.carpetaDeInterfazParanaToolStripMenuItem.Name = "carpetaDeInterfazParanaToolStripMenuItem";
+            this.carpetaDeInterfazParanaToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.carpetaDeInterfazParanaToolStripMenuItem.Text = "Carpeta de interfaz Parana";
+            this.carpetaDeInterfazParanaToolStripMenuItem.Click += new System.EventHandler(this.carpetaDeInterfazParanaToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -95,6 +113,8 @@ namespace DynamicBrokerCaja
         private System.Windows.Forms.ToolStripMenuItem verCajasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionarCobrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verCajasAnterioresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem carpetaDeInterfazParanaToolStripMenuItem;
     }
 }
 

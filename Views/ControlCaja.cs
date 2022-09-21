@@ -253,16 +253,31 @@ namespace DynamicBrokerCaja.Views
         }
         private void btnDeleteMov_Click(object sender, EventArgs e)
         {
-            btnDeleteMov.Enabled = false;
+            bool iniciocierre = true;
+            using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
+            {
+                if(DB.Movimiento.Find((int)dgvMovimientos.CurrentRow.Cells[0].Value).TipoMovId == 1 || DB.Movimiento.Find((int)dgvMovimientos.CurrentRow.Cells[0].Value).TipoMovId == 2)
+                {
+                    iniciocierre = true;
+                }
+                else
+                {
+                    iniciocierre = false;
+                }
+            }
+
+            if (!iniciocierre)
+            {btnDeleteMov.Enabled = false;
             
             DialogResult result = MessageBox.Show("¿Está Seguro que desea eliminar este movimiento?", "Cancelar", MessageBoxButtons.YesNoCancel);
 
             switch (result)
             {
                 case DialogResult.Yes:
-                    int borrar = (int)dgvMovimientos.CurrentRow.Cells[0].Value;
-                    BorrarOperacion(borrar);
-                    MessageBox.Show("Movimiento eliminado exitosamente");
+                        int borrar = (int)dgvMovimientos.CurrentRow.Cells[0].Value;
+                        BorrarOperacion(borrar);
+                        LlenarDGVMovimientos();
+                        MessageBox.Show("Movimiento eliminado exitosamente");
 
                     break;
                 case DialogResult.No:
@@ -272,6 +287,13 @@ namespace DynamicBrokerCaja.Views
                     
                     break;
             }
+
+            }
+            else
+            {
+                MessageBox.Show("No se pueden eliminar movimientos de inicio o cierre de caja");
+            }
+            
         }
 
         private void BorrarOperacion(int borrar)

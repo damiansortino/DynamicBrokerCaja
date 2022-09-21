@@ -41,6 +41,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
@@ -127,6 +128,12 @@
     <Compile Include="Views\CerrarCajaView.Designer.cs">
       <DependentUpon>CerrarCajaView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ConfigInterParana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ConfigInterParana.Designer.cs">
+      <DependentUpon>ConfigInterParana.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ControlCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CerrarCajaView.resx">
       <DependentUpon>CerrarCajaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ConfigInterParana.resx">
+      <DependentUpon>ConfigInterParana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ControlCaja.resx">
       <DependentUpon>ControlCaja.cs</DependentUpon>

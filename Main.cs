@@ -17,5 +17,12 @@ namespace DynamicBrokerCaja
             control.MdiParent = this;
             control.Show();
         }
+
+        private void carpetaDeInterfazParanaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConfigInterParana cip = new ConfigInterParana();
+            cip.MdiParent = ParentForm;
+            cip.Show();
+        }
     }
 }
