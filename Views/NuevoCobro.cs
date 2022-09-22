@@ -139,7 +139,7 @@ namespace DynamicBrokerCaja.Views
                     {
                         lblVencimientoActual.ForeColor = Color.FromArgb(214, 27, 12);
                     }
-                    
+
                     btnAceptar.Enabled = true;
                     e.Handled = true;
                     cbMedioPago.Focus();
@@ -168,15 +168,17 @@ namespace DynamicBrokerCaja.Views
         private void CompletarCampos()
         {
             tbCliente.Text = BuscarCliente(int.Parse(tbBarra.Text.Substring(22, 8)));
+            if (tbCliente.Text == "")
+            {
+                MessageBox.Show("No se encontró el cliente, actualice su interfaz");
+            }
             dtpVencimientoRecibo.Value = BuscarVencimiento(tbBarra.Text.Substring(22, 8)).Date;
-
             tbPoliza.Text = tbBarra.Text.Substring(22, 8);
             tbEndoso.Text = tbBarra.Text.Substring(30, 6);
             tbImporte.Text = tbBarra.Text.Substring(6, 6) + "." + tbBarra.Text.Substring(12, 2);
             tbCuota.Text = tbBarra.Text.Substring(36, 2);
             using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
             {
-
                 cbRama.Text = DB.Rama.ToList().Find(x => x.Codigo == tbBarra.Text.Substring(20, 2)).Nombre;
             }
         }
@@ -204,12 +206,9 @@ namespace DynamicBrokerCaja.Views
 
                                     foreach (XmlNode cuota in lista[0])
                                     {
-                                        MessageBox.Show(cuota.ChildNodes[0].InnerText);
 
-                                        
-                                        if(cuota.ChildNodes[0].InnerText == int.Parse(tbBarra.Text.Substring(36, 2)).ToString())
+                                        if (cuota.ChildNodes[0].InnerText == int.Parse(tbBarra.Text.Substring(36, 2)).ToString())
                                         {
-                                            MessageBox.Show(cuota.ChildNodes[1].InnerText);
                                             return DateTime.Parse(cuota.ChildNodes[1].InnerText);
                                         }
                                     }
@@ -224,7 +223,7 @@ namespace DynamicBrokerCaja.Views
                 }
 
             }
-            return DateTime.MinValue;
+            return DateTime.Now;
         }
 
         private string BuscarCliente(int v)
@@ -232,6 +231,7 @@ namespace DynamicBrokerCaja.Views
             DirectoryInfo folder = new DirectoryInfo(ConfigurationManager.ConnectionStrings["InterfazParana"].ConnectionString + "/Emision");
             IEnumerable<FileInfo> files = folder.GetFiles().OrderBy(x => x.CreationTime);
             XmlDocument documento = new XmlDocument();
+            string devolver = "";
 
             foreach (var item in files)
             {
@@ -249,7 +249,6 @@ namespace DynamicBrokerCaja.Views
                                     return ((XmlNode)operacion.GetElementsByTagName("tomador")[0]).ChildNodes[0].InnerText;
                                 }
                             }
-
                         }
 
 
@@ -258,7 +257,7 @@ namespace DynamicBrokerCaja.Views
                 }
 
             }
-            return "";
+            return devolver;
         }
 
         private void ComprobarLectura()

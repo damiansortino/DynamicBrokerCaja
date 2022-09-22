@@ -194,6 +194,7 @@ namespace DynamicBrokerCaja.Views
             this.Controls.Add(this.dgvMovimientos);
             this.Name = "ControlCaja";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Caja";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
