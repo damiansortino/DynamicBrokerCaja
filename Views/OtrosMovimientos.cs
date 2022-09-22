@@ -1,13 +1,8 @@
 ﻿using DynamicBrokerCaja.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DynamicBrokerCaja.Views
@@ -28,7 +23,7 @@ namespace DynamicBrokerCaja.Views
         {
             using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
             {
-                List<TipoMovimientoCaja> tipo = DB.TipoMovimientoCaja.ToList().FindAll(x=>x.FechaBaja == null);
+                List<TipoMovimientoCaja> tipo = DB.TipoMovimientoCaja.ToList().FindAll(x => x.FechaBaja == null);
                 cbTipoMovimiento.DataSource = tipo;
                 cbTipoMovimiento.DisplayMember = "Nombre";
                 cbTipoMovimiento.ValueMember = "Id";
@@ -37,7 +32,7 @@ namespace DynamicBrokerCaja.Views
                 cbMedioPago.DataSource = medios;
                 cbMedioPago.DisplayMember = "Nombre";
                 cbMedioPago.ValueMember = "Id";
-                
+
                 tbImporte.Focus();
             }
         }
@@ -51,7 +46,7 @@ namespace DynamicBrokerCaja.Views
         {
             if (VerificarCampos())
             {
-                if(radioEntrada.Checked == true)
+                if (radioEntrada.Checked == true)
                 {
                     Movimiento nuevo = CrearMovimiento();
                     GuardarMovimiento(nuevo);
@@ -80,16 +75,16 @@ namespace DynamicBrokerCaja.Views
                     }
 
                 }
-                
-                
+
+
             }
             else
             {
                 tbImporte.Focus();
                 MessageBox.Show(" Error, El campo de importe solo admite números y .(punto) para separar los centavos");
             }
-            
-            
+
+
         }
 
         private bool VerificarMontoEgreso()
@@ -114,7 +109,7 @@ namespace DynamicBrokerCaja.Views
             decimal montocaja = 0;
             using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
             {
-                List<Movimiento> movimientos = DB.Movimiento.ToList().FindAll(x => x.CajaId == CajaActual().Id && x.FechaBaja==null);
+                List<Movimiento> movimientos = DB.Movimiento.ToList().FindAll(x => x.CajaId == CajaActual().Id && x.FechaBaja == null);
                 foreach (Movimiento item in movimientos)
                 {
                     montocaja = montocaja + item.Importe;
@@ -164,10 +159,10 @@ namespace DynamicBrokerCaja.Views
         private Caja CajaActual()
         {
             Caja actual = new Caja();
-  
+
             using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
             {
-                actual = DB.Caja.ToList().Find(x=>x.FechaHoraCierre == null);
+                actual = DB.Caja.ToList().Find(x => x.FechaHoraCierre == null);
             }
             return actual;
         }
@@ -175,7 +170,7 @@ namespace DynamicBrokerCaja.Views
         private bool VerificarCampos()
         {
             decimal valor;
-            if(decimal.TryParse(tbImporte.Text,out valor))
+            if (decimal.TryParse(tbImporte.Text, out valor))
             {
                 return true;
             }

@@ -1,8 +1,13 @@
 ﻿using DynamicBrokerCaja.Models;
 using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace DynamicBrokerCaja.Views
 {
@@ -130,6 +135,11 @@ namespace DynamicBrokerCaja.Views
                 if (ComprobarBarra())
                 {
                     CompletarCampos();
+                    if (dtpVencimientoRecibo.Value == DateTime.MinValue)
+                    {
+                        lblVencimientoActual.ForeColor = Color.FromArgb(214, 27, 12);
+                    }
+                    
                     btnAceptar.Enabled = true;
                     e.Handled = true;
                     cbMedioPago.Focus();
@@ -139,7 +149,7 @@ namespace DynamicBrokerCaja.Views
                     tbBarra.Clear();
                     tbBarra.Focus();
                 }
-                
+
             }
             else
             {
@@ -157,14 +167,98 @@ namespace DynamicBrokerCaja.Views
 
         private void CompletarCampos()
         {
+            tbCliente.Text = BuscarCliente(int.Parse(tbBarra.Text.Substring(22, 8)));
+            dtpVencimientoRecibo.Value = BuscarVencimiento(tbBarra.Text.Substring(22, 8)).Date;
+
             tbPoliza.Text = tbBarra.Text.Substring(22, 8);
             tbEndoso.Text = tbBarra.Text.Substring(30, 6);
             tbImporte.Text = tbBarra.Text.Substring(6, 6) + "." + tbBarra.Text.Substring(12, 2);
             tbCuota.Text = tbBarra.Text.Substring(36, 2);
             using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
             {
+
                 cbRama.Text = DB.Rama.ToList().Find(x => x.Codigo == tbBarra.Text.Substring(20, 2)).Nombre;
             }
+        }
+
+        private DateTime BuscarVencimiento(string v)
+        {
+            DirectoryInfo folder = new DirectoryInfo(ConfigurationManager.ConnectionStrings["InterfazParana"].ConnectionString + "/Emision");
+            IEnumerable<FileInfo> files = folder.GetFiles().OrderBy(x => x.CreationTime);
+            XmlDocument documento = new XmlDocument();
+
+            foreach (var item in files)
+            {
+                documento.Load(item.FullName);
+                foreach (XmlElement elemento in documento.DocumentElement)
+                {
+                    if (elemento.Name == "operaciones")
+                    {
+                        foreach (XmlElement operacion in elemento.ChildNodes)
+                        {
+                            foreach (XmlElement campo in operacion.ChildNodes)
+                            {
+                                if ((campo.Name == "poliza" && campo.InnerText == v.ToString().Trim()) || (campo.Name == "asociada" && campo.InnerText == v.ToString().Trim()))
+                                {
+                                    XmlNodeList lista = operacion.GetElementsByTagName("cuotas");
+
+                                    foreach (XmlNode cuota in lista[0])
+                                    {
+                                        MessageBox.Show(cuota.ChildNodes[0].InnerText);
+
+                                        
+                                        if(cuota.ChildNodes[0].InnerText == int.Parse(tbBarra.Text.Substring(36, 2)).ToString())
+                                        {
+                                            MessageBox.Show(cuota.ChildNodes[1].InnerText);
+                                            return DateTime.Parse(cuota.ChildNodes[1].InnerText);
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+
+
+                    }
+
+                }
+
+            }
+            return DateTime.MinValue;
+        }
+
+        private string BuscarCliente(int v)
+        {
+            DirectoryInfo folder = new DirectoryInfo(ConfigurationManager.ConnectionStrings["InterfazParana"].ConnectionString + "/Emision");
+            IEnumerable<FileInfo> files = folder.GetFiles().OrderBy(x => x.CreationTime);
+            XmlDocument documento = new XmlDocument();
+
+            foreach (var item in files)
+            {
+                documento.Load(item.FullName);
+                foreach (XmlElement elemento in documento.DocumentElement)
+                {
+                    if (elemento.Name == "operaciones")
+                    {
+                        foreach (XmlElement operacion in elemento.ChildNodes)
+                        {
+                            foreach (XmlElement campo in operacion.ChildNodes)
+                            {
+                                if ((campo.Name == "poliza" && campo.InnerText == v.ToString().Trim()) || (campo.Name == "asociada" && campo.InnerText == v.ToString().Trim()))
+                                {
+                                    return ((XmlNode)operacion.GetElementsByTagName("tomador")[0]).ChildNodes[0].InnerText;
+                                }
+                            }
+
+                        }
+
+
+                    }
+
+                }
+
+            }
+            return "";
         }
 
         private void ComprobarLectura()
@@ -211,7 +305,7 @@ namespace DynamicBrokerCaja.Views
 
         private void tbBarra_Leave(object sender, EventArgs e)
         {
-           
+
         }
     }
 }

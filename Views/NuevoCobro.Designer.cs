@@ -47,7 +47,7 @@ namespace DynamicBrokerCaja.Views
             this.label8 = new System.Windows.Forms.Label();
             this.cbRama = new System.Windows.Forms.ComboBox();
             this.gbContenedorRecibo = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblVencimientoActual = new System.Windows.Forms.Label();
             this.dtpVencimientoRecibo = new System.Windows.Forms.DateTimePicker();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -198,7 +198,7 @@ namespace DynamicBrokerCaja.Views
             // 
             // gbContenedorRecibo
             // 
-            this.gbContenedorRecibo.Controls.Add(this.label9);
+            this.gbContenedorRecibo.Controls.Add(this.lblVencimientoActual);
             this.gbContenedorRecibo.Controls.Add(this.dtpVencimientoRecibo);
             this.gbContenedorRecibo.Controls.Add(this.label3);
             this.gbContenedorRecibo.Controls.Add(this.cbRama);
@@ -217,15 +217,15 @@ namespace DynamicBrokerCaja.Views
             this.gbContenedorRecibo.TabStop = false;
             this.gbContenedorRecibo.Text = "Datos del Recibo";
             // 
-            // label9
+            // lblVencimientoActual
             // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(17, 195);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 13);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Vencimiento (Actual)";
+            this.lblVencimientoActual.AutoSize = true;
+            this.lblVencimientoActual.ForeColor = System.Drawing.Color.Black;
+            this.lblVencimientoActual.Location = new System.Drawing.Point(17, 195);
+            this.lblVencimientoActual.Name = "lblVencimientoActual";
+            this.lblVencimientoActual.Size = new System.Drawing.Size(104, 13);
+            this.lblVencimientoActual.TabIndex = 22;
+            this.lblVencimientoActual.Text = "Vencimiento (Actual)";
             // 
             // dtpVencimientoRecibo
             // 
@@ -308,7 +308,7 @@ namespace DynamicBrokerCaja.Views
         private System.Windows.Forms.GroupBox gbContenedorRecibo;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblVencimientoActual;
         private System.Windows.Forms.DateTimePicker dtpVencimientoRecibo;
     }
 }

@@ -34,8 +34,8 @@ namespace DynamicBrokerCaja.Views
                 else
                 {
                     MessageBox.Show("No es posible realizar esta operación, el dinero disponible en la caja" +
-                    " no es suficiente para el retiro que intenta realizar." +"\n"+"Efectivo en Caja $ " + ImporteCaja());
-                   
+                    " no es suficiente para el retiro que intenta realizar." + "\n" + "Efectivo en Caja $ " + ImporteCaja());
+
                     this.Close();
                 }
             }
@@ -55,7 +55,7 @@ namespace DynamicBrokerCaja.Views
             provider = new CultureInfo("en-US");
             //fintruco
 
-            decimal montoretiro = decimal.Parse(tbImporte.Text,style,provider);
+            decimal montoretiro = decimal.Parse(tbImporte.Text, style, provider);
             if (montoretiro > ImporteCaja())
             {
                 return false;
@@ -68,7 +68,7 @@ namespace DynamicBrokerCaja.Views
             decimal montocaja = 0;
             using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
             {
-                List<Movimiento> movimientos = DB.Movimiento.ToList().FindAll(x => x.CajaId == CajaActual().Id && x.FechaBaja==null);
+                List<Movimiento> movimientos = DB.Movimiento.ToList().FindAll(x => x.CajaId == CajaActual().Id && x.FechaBaja == null);
                 foreach (Movimiento item in movimientos)
                 {
                     montocaja = montocaja + item.Importe;
@@ -100,7 +100,7 @@ namespace DynamicBrokerCaja.Views
 
                 crear.CajaId = CajaActual().Id;
                 crear.Fecha = DateTime.Now;
-                crear.Importe = -decimal.Parse(tbImporte.Text,style,provider);
+                crear.Importe = -decimal.Parse(tbImporte.Text, style, provider);
                 crear.MedioPagoId = 1;
                 crear.TipoMovId = 3;
             }

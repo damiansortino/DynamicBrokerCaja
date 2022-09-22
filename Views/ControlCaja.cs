@@ -37,7 +37,7 @@ namespace DynamicBrokerCaja.Views
                 if (ExisteCajaAbierta())
                 {
                     dgvMovimientos.DataSource = MovimientosDGV(MovimientosCaja(CajaActual().Id));
-                    lblEfectivoCaja.Text = "Efectivo en Caja $ "+ EfectivoCajaActual().ToString();
+                    lblEfectivoCaja.Text = "Efectivo en Caja $ " + EfectivoCajaActual().ToString();
                 }
 
             }
@@ -54,8 +54,8 @@ namespace DynamicBrokerCaja.Views
             using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
             {
                 Caja actual = CajaActual();
-                List<Movimiento> movimientos = DB.Movimiento.ToList().FindAll(x => x.CajaId == actual.Id 
-                && x.MedioPagoId == 1).FindAll(x=>x.FechaBaja == null);
+                List<Movimiento> movimientos = DB.Movimiento.ToList().FindAll(x => x.CajaId == actual.Id
+                && x.MedioPagoId == 1).FindAll(x => x.FechaBaja == null);
                 foreach (Movimiento item in movimientos)
                 {
                     cajaactual = cajaactual + item.Importe;
@@ -84,7 +84,7 @@ namespace DynamicBrokerCaja.Views
                 using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
                 {
                     movimientos = DB.Movimiento.ToList()
-                        .FindAll(x => x.CajaId == id && x.MedioPagoId == 1).FindAll(x=>x.FechaBaja == null);
+                        .FindAll(x => x.CajaId == id && x.MedioPagoId == 1).FindAll(x => x.FechaBaja == null);
                 }
             }
             catch (Exception)
@@ -244,7 +244,7 @@ namespace DynamicBrokerCaja.Views
             {
                 MessageBox.Show("Error, antes de hacer movimientos debe iniciar caja");
             }
-            
+
         }
 
         private void dgvMovimientos_MouseClick(object sender, MouseEventArgs e)
@@ -256,7 +256,7 @@ namespace DynamicBrokerCaja.Views
             bool iniciocierre = true;
             using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
             {
-                if(DB.Movimiento.Find((int)dgvMovimientos.CurrentRow.Cells[0].Value).TipoMovId == 1 || DB.Movimiento.Find((int)dgvMovimientos.CurrentRow.Cells[0].Value).TipoMovId == 2)
+                if (DB.Movimiento.Find((int)dgvMovimientos.CurrentRow.Cells[0].Value).TipoMovId == 1 || DB.Movimiento.Find((int)dgvMovimientos.CurrentRow.Cells[0].Value).TipoMovId == 2)
                 {
                     iniciocierre = true;
                 }
@@ -267,33 +267,34 @@ namespace DynamicBrokerCaja.Views
             }
 
             if (!iniciocierre)
-            {btnDeleteMov.Enabled = false;
-            
-            DialogResult result = MessageBox.Show("¿Está Seguro que desea eliminar este movimiento?", "Cancelar", MessageBoxButtons.YesNoCancel);
-
-            switch (result)
             {
-                case DialogResult.Yes:
+                btnDeleteMov.Enabled = false;
+
+                DialogResult result = MessageBox.Show("¿Está Seguro que desea eliminar este movimiento?", "Cancelar", MessageBoxButtons.YesNoCancel);
+
+                switch (result)
+                {
+                    case DialogResult.Yes:
                         int borrar = (int)dgvMovimientos.CurrentRow.Cells[0].Value;
                         BorrarOperacion(borrar);
                         LlenarDGVMovimientos();
                         MessageBox.Show("Movimiento eliminado exitosamente");
 
-                    break;
-                case DialogResult.No:
-                    
-                    break;
-                case DialogResult.Cancel:
-                    
-                    break;
-            }
+                        break;
+                    case DialogResult.No:
+
+                        break;
+                    case DialogResult.Cancel:
+
+                        break;
+                }
 
             }
             else
             {
                 MessageBox.Show("No se pueden eliminar movimientos de inicio o cierre de caja");
             }
-            
+
         }
 
         private void BorrarOperacion(int borrar)
