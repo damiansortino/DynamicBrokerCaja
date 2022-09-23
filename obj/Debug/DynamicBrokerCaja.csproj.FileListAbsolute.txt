@@ -41,3 +41,4 @@ D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.csproj.CopyComplete
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.exe
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.pdb
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.ConfigInterParana.resources
+D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.CalculadoraPoint.resources

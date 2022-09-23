@@ -39,6 +39,8 @@ namespace DynamicBrokerCaja
             this.paranaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emisionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cobranzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mercadoPointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calcularCuotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,8 @@ namespace DynamicBrokerCaja
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.verCajasToolStripMenuItem,
             this.configuraciónToolStripMenuItem,
-            this.interfazToolStripMenuItem});
+            this.interfazToolStripMenuItem,
+            this.mercadoPointToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -120,6 +123,21 @@ namespace DynamicBrokerCaja
             this.cobranzaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cobranzaToolStripMenuItem.Text = "Cobranza";
             // 
+            // mercadoPointToolStripMenuItem
+            // 
+            this.mercadoPointToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.calcularCuotaToolStripMenuItem});
+            this.mercadoPointToolStripMenuItem.Name = "mercadoPointToolStripMenuItem";
+            this.mercadoPointToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.mercadoPointToolStripMenuItem.Text = "MercadoPoint";
+            // 
+            // calcularCuotaToolStripMenuItem
+            // 
+            this.calcularCuotaToolStripMenuItem.Name = "calcularCuotaToolStripMenuItem";
+            this.calcularCuotaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.calcularCuotaToolStripMenuItem.Text = "Calcular Cuota";
+            this.calcularCuotaToolStripMenuItem.Click += new System.EventHandler(this.calcularCuotaToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +171,8 @@ namespace DynamicBrokerCaja
         private System.Windows.Forms.ToolStripMenuItem paranaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem emisionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cobranzaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mercadoPointToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem calcularCuotaToolStripMenuItem;
     }
 }
 

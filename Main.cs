@@ -24,5 +24,12 @@ namespace DynamicBrokerCaja
             cip.MdiParent = ParentForm;
             cip.Show();
         }
+
+        private void calcularCuotaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CalculadoraPoint ventana = new CalculadoraPoint();
+            ventana.MdiParent = ParentForm;
+            ventana.Show();
+        }
     }
 }

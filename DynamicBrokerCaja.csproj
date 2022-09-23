@@ -122,6 +122,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\CalculadoraPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CalculadoraPoint.Designer.cs">
+      <DependentUpon>CalculadoraPoint.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CerrarCajaView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\CalculadoraPoint.resx">
+      <DependentUpon>CalculadoraPoint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\CerrarCajaView.resx">
       <DependentUpon>CerrarCajaView.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +236,7 @@
     <Content Include="CodigosDeError.txt" />
     <Content Include="img\iconDelete.png" />
     <Content Include="img\iconRefresh.png" />
+    <Content Include="img\mercadopoint.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

@@ -131,24 +131,43 @@ namespace DynamicBrokerCaja.Views
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
                 LimpiarForm();
-                ComprobarLectura();
-                if (ComprobarBarra())
-                {
-                    CompletarCampos();
-                    if (dtpVencimientoRecibo.Value == DateTime.MinValue)
-                    {
-                        lblVencimientoActual.ForeColor = Color.FromArgb(214, 27, 12);
-                    }
 
-                    btnAceptar.Enabled = true;
-                    e.Handled = true;
-                    cbMedioPago.Focus();
+                if (ComprobarLectura())
+                {
+                    if (ComprobarBarra())
+                    {
+                        if (ExistePolizaInterfaz())
+                        {
+                            CompletarCampos();
+                            btnAceptar.Enabled = true;
+                            lblVencimientoActual.ForeColor = Color.FromArgb(46, 194, 23);
+                            e.Handled = true;
+                            cbMedioPago.Focus();
+                        }
+                        else
+                        {
+                            lblVencimientoActual.ForeColor = Color.FromArgb(214, 27, 12);
+                            MessageBox.Show("No se encontró información en la interfaz, deberá completar manualmente el campo 'vencimiento'");
+                            CompletarReciboBasico();
+
+                            btnAceptar.Enabled = true;
+                            e.Handled = true;
+                            cbMedioPago.Focus();
+                        }
+
+                    }
+                    else
+                    {
+                        tbBarra.Clear();
+                        tbBarra.Focus();
+                        MessageBox.Show("No se reconoce el comprobante, intente nuevamente");
+                    }
                 }
                 else
                 {
-                    tbBarra.Clear();
-                    tbBarra.Focus();
+                    MessageBox.Show("Lectura incorrecta, intente nuevamente");
                 }
+
 
             }
             else
@@ -157,6 +176,76 @@ namespace DynamicBrokerCaja.Views
             }
 
         }
+
+        private bool ComprobarLectura()
+        {
+            if (tbBarra.TextLength != 40)
+            {
+                tbBarra.Clear();
+                tbBarra.Focus();
+                return false;
+
+            }
+            else
+            {
+                if (tbBarra.Text.Substring(0, 6) != "094330")
+                {
+                    tbBarra.Clear();
+                    tbBarra.Focus();
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
+
+        private void CompletarReciboBasico()
+        {
+            tbPoliza.Text = tbBarra.Text.Substring(22, 8);
+            tbEndoso.Text = tbBarra.Text.Substring(30, 6);
+            tbImporte.Text = tbBarra.Text.Substring(6, 6) + "." + tbBarra.Text.Substring(12, 2);
+            tbCuota.Text = tbBarra.Text.Substring(36, 2);
+            using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
+            {
+                cbRama.Text = DB.Rama.ToList().Find(x => x.Codigo == tbBarra.Text.Substring(20, 2)).Nombre;
+            }
+        }
+
+        private bool ExistePolizaInterfaz()
+        {
+            DirectoryInfo folder = new DirectoryInfo(ConfigurationManager.ConnectionStrings["InterfazParana"].ConnectionString + "/Emision");
+            IEnumerable<FileInfo> files = folder.GetFiles().OrderBy(x => x.CreationTime);
+            XmlDocument documento = new XmlDocument();
+
+            foreach (var item in files)
+            {
+                documento.Load(item.FullName);
+                foreach (XmlElement elemento in documento.DocumentElement)
+                {
+                    if (elemento.Name == "operaciones")
+                    {
+                        foreach (XmlElement operacion in elemento.ChildNodes)
+                        {
+                            foreach (XmlElement campo in operacion.ChildNodes)
+                            {
+                                if ((campo.Name == "poliza" && campo.InnerText == tbBarra.Text.Substring(22, 8).ToString().Trim()) || (campo.Name == "asociada" && campo.InnerText == tbBarra.Text.Substring(22, 8).ToString().Trim()))
+                                {
+                                    return true;
+                                }
+                            }
+                        }
+
+
+                    }
+
+                }
+
+            }
+            return false;
+        }
+
         private void LimpiarForm()
         {
             tbPoliza.Text = "";
@@ -168,10 +257,6 @@ namespace DynamicBrokerCaja.Views
         private void CompletarCampos()
         {
             tbCliente.Text = BuscarCliente(int.Parse(tbBarra.Text.Substring(22, 8)));
-            if (tbCliente.Text == "")
-            {
-                MessageBox.Show("No se encontró el cliente, actualice su interfaz");
-            }
             dtpVencimientoRecibo.Value = BuscarVencimiento(tbBarra.Text.Substring(22, 8)).Date;
             tbPoliza.Text = tbBarra.Text.Substring(22, 8);
             tbEndoso.Text = tbBarra.Text.Substring(30, 6);
@@ -260,37 +345,18 @@ namespace DynamicBrokerCaja.Views
             return devolver;
         }
 
-        private void ComprobarLectura()
+
+        // cambiar esto
+        private void Comprectura()
         {
-            if (tbBarra.TextLength != 40)
-            {
-                tbBarra.Clear();
-                tbBarra.Focus();
-                MessageBox.Show("Error de lectura, vuelva a intentarlo");
-
-            }
-            else
-            {
-
-                if (tbBarra.Text.Substring(0, 6) == "094057")
-                {
-                    tbBarra.Clear();
-                    tbBarra.Focus();
-                    MessageBox.Show("No está habilitada la cobranza de Recibos " +
-                        "de Caledonia con códigos de Barra todavía");
-                }
-            }
+            
 
         }
 
+        //
+
         private bool ComprobarBarra()
         {
-            if (tbBarra.TextLength != 40)
-            {
-                tbBarra.Clear();
-                return false;
-            }
-
             if (tbBarra.Text.Substring(0, 6) == "094330")
             {
                 return true;
