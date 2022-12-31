@@ -31,5 +31,22 @@ namespace DynamicBrokerCaja
             ventana.MdiParent = ParentForm;
             ventana.Show();
         }
+
+        private void cobradosEnOficinaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CobradosOficina cobof = new CobradosOficina();
+            cobof.MdiParent = ParentForm;
+            cobof.Show();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iPDelServidorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //
+        }
     }
 }

@@ -20,6 +20,8 @@ D:\GIT\DynamicBrokerCaja\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.Nue
 D:\GIT\DynamicBrokerCaja\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.RetiroCaja.resources
 D:\GIT\DynamicBrokerCaja\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.OtrosMovimientos.resources
 D:\GIT\DynamicBrokerCaja\bin\Debug\DynamicBrokerCaja.exe.config
+D:\GIT\DynamicBrokerCaja\bin\Debug\DynamicBrokerCaja.exe.manifest
+D:\GIT\DynamicBrokerCaja\bin\Debug\DynamicBrokerCaja.application
 D:\GIT\DynamicBrokerCaja\bin\Debug\DynamicBrokerCaja.exe
 D:\GIT\DynamicBrokerCaja\bin\Debug\DynamicBrokerCaja.pdb
 D:\GIT\DynamicBrokerCaja\bin\Debug\EntityFramework.dll
@@ -29,7 +31,11 @@ D:\GIT\DynamicBrokerCaja\bin\Debug\EntityFramework.SqlServer.xml
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.csproj.AssemblyReference.cache
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Main.resources
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Properties.Resources.resources
+D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.CalculadoraPoint.resources
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.CerrarCajaView.resources
+D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.CobradosOficina.resources
+D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.ConfigInterParana.resources
+D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.ConfigIPServer.resources
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.ControlCaja.resources
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.IniciarCaja.resources
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.NuevoCobro.resources
@@ -37,8 +43,8 @@ D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.OtrosMovimientos.reso
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.RetiroCaja.resources
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.csproj.GenerateResource.cache
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.csproj.CoreCompileInputs.cache
+D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.exe.manifest
+D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.application
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.csproj.CopyComplete
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.exe
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.pdb
-D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.ConfigInterParana.resources
-D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.CalculadoraPoint.resources

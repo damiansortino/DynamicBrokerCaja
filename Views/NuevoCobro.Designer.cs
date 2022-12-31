@@ -34,7 +34,6 @@ namespace DynamicBrokerCaja.Views
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tbCliente = new System.Windows.Forms.TextBox();
-            this.checkBox_CobranzaSinRecibo = new System.Windows.Forms.CheckBox();
             this.cbMedioPago = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tbPoliza = new System.Windows.Forms.TextBox();
@@ -100,17 +99,6 @@ namespace DynamicBrokerCaja.Views
             this.tbCliente.Name = "tbCliente";
             this.tbCliente.Size = new System.Drawing.Size(368, 22);
             this.tbCliente.TabIndex = 6;
-            // 
-            // checkBox_CobranzaSinRecibo
-            // 
-            this.checkBox_CobranzaSinRecibo.AutoSize = true;
-            this.checkBox_CobranzaSinRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_CobranzaSinRecibo.Location = new System.Drawing.Point(658, 301);
-            this.checkBox_CobranzaSinRecibo.Name = "checkBox_CobranzaSinRecibo";
-            this.checkBox_CobranzaSinRecibo.Size = new System.Drawing.Size(152, 20);
-            this.checkBox_CobranzaSinRecibo.TabIndex = 8;
-            this.checkBox_CobranzaSinRecibo.Text = "Cobranza sin Recibo";
-            this.checkBox_CobranzaSinRecibo.UseVisualStyleBackColor = true;
             // 
             // cbMedioPago
             // 
@@ -243,7 +231,7 @@ namespace DynamicBrokerCaja.Views
             this.dtpVencimientoRecibo.Name = "dtpVencimientoRecibo";
             this.dtpVencimientoRecibo.Size = new System.Drawing.Size(94, 22);
             this.dtpVencimientoRecibo.TabIndex = 21;
-            this.dtpVencimientoRecibo.Value = new System.DateTime(2022, 9, 17, 0, 0, 0, 0);
+            this.dtpVencimientoRecibo.Value = new System.DateTime(2022, 12, 24, 0, 0, 0, 0);
             // 
             // btnAceptar
             // 
@@ -279,7 +267,6 @@ namespace DynamicBrokerCaja.Views
             this.Controls.Add(this.gbContenedorRecibo);
             this.Controls.Add(this.cbMedioPago);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.checkBox_CobranzaSinRecibo);
             this.Controls.Add(this.tbCliente);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -303,7 +290,6 @@ namespace DynamicBrokerCaja.Views
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbCliente;
-        private System.Windows.Forms.CheckBox checkBox_CobranzaSinRecibo;
         private System.Windows.Forms.ComboBox cbMedioPago;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbPoliza;

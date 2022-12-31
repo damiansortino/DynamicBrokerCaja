@@ -26,18 +26,17 @@ namespace DynamicBrokerCaja.Views
         private void btnAceptar_Click(object sender, System.EventArgs e)
         {
             Movimiento movimiento = CrearMovimiento();
-            if (checkBox_CobranzaSinRecibo.Checked == false)
+
+            Recibo recibo = CrearRecibo();
+            using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
             {
-                Recibo recibo = CrearRecibo();
-                using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
-                {
-                    DB.Recibo.Add(recibo);
-                    DB.SaveChanges();
-                    Recibo ultimo = DB.Set<Recibo>().OrderByDescending(t => t.Id)
-                        .FirstOrDefault();
-                    movimiento.ReciboId = ultimo.Id;
-                }
+                DB.Recibo.Add(recibo);
+                DB.SaveChanges();
+                Recibo ultimo = DB.Set<Recibo>().OrderByDescending(t => t.Id)
+                    .FirstOrDefault();
+                movimiento.ReciboId = ultimo.Id;
             }
+
             movimiento.CajaId = CajaAbierta().Id;
             using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
             {
@@ -95,19 +94,13 @@ namespace DynamicBrokerCaja.Views
             mov.Importe = decimal.Parse(tbImporte.Text, style, provider);
             mov.Fecha = DateTime.Now;
             mov.MedioPagoId = ((MedioPago)cbMedioPago.SelectedItem).Id;
-            if (checkBox_CobranzaSinRecibo.Checked == true)
-            {
-                mov.TipoMovId = 9;
-            }
-            else
-            {
-                mov.TipoMovId = 8;
-            }
+            mov.TipoMovId = 8;
             return mov;
         }
 
         private void NuevoCobro_Load(object sender, System.EventArgs e)
         {
+            dtpVencimientoRecibo.Value = DateTime.Now;
             CompletarComboBox();
             btnAceptar.Enabled = false;
             tbBarra.Focus();
@@ -349,7 +342,7 @@ namespace DynamicBrokerCaja.Views
         // cambiar esto
         private void Comprectura()
         {
-            
+
 
         }
 

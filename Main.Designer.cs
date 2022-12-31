@@ -35,25 +35,30 @@ namespace DynamicBrokerCaja
             this.verCajasAnterioresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carpetaDeInterfazParanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iPDelServidorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.interfazToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paranaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emisionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cobranzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mercadoPointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calcularCuotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recibosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cobradosEnOficinaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.verCajasToolStripMenuItem,
             this.configuraciónToolStripMenuItem,
             this.interfazToolStripMenuItem,
-            this.mercadoPointToolStripMenuItem});
+            this.mercadoPointToolStripMenuItem,
+            this.recibosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -82,7 +87,8 @@ namespace DynamicBrokerCaja
             // configuraciónToolStripMenuItem
             // 
             this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.carpetaDeInterfazParanaToolStripMenuItem});
+            this.carpetaDeInterfazParanaToolStripMenuItem,
+            this.iPDelServidorToolStripMenuItem});
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
@@ -93,6 +99,13 @@ namespace DynamicBrokerCaja
             this.carpetaDeInterfazParanaToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.carpetaDeInterfazParanaToolStripMenuItem.Text = "Carpeta de interfaz Parana";
             this.carpetaDeInterfazParanaToolStripMenuItem.Click += new System.EventHandler(this.carpetaDeInterfazParanaToolStripMenuItem_Click);
+            // 
+            // iPDelServidorToolStripMenuItem
+            // 
+            this.iPDelServidorToolStripMenuItem.Name = "iPDelServidorToolStripMenuItem";
+            this.iPDelServidorToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.iPDelServidorToolStripMenuItem.Text = "IP del Servidor";
+            this.iPDelServidorToolStripMenuItem.Click += new System.EventHandler(this.iPDelServidorToolStripMenuItem_Click);
             // 
             // interfazToolStripMenuItem
             // 
@@ -114,13 +127,13 @@ namespace DynamicBrokerCaja
             // emisionToolStripMenuItem
             // 
             this.emisionToolStripMenuItem.Name = "emisionToolStripMenuItem";
-            this.emisionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.emisionToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.emisionToolStripMenuItem.Text = "Emisión";
             // 
             // cobranzaToolStripMenuItem
             // 
             this.cobranzaToolStripMenuItem.Name = "cobranzaToolStripMenuItem";
-            this.cobranzaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cobranzaToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.cobranzaToolStripMenuItem.Text = "Cobranza";
             // 
             // mercadoPointToolStripMenuItem
@@ -138,11 +151,26 @@ namespace DynamicBrokerCaja
             this.calcularCuotaToolStripMenuItem.Text = "Calcular Cuota";
             this.calcularCuotaToolStripMenuItem.Click += new System.EventHandler(this.calcularCuotaToolStripMenuItem_Click);
             // 
+            // recibosToolStripMenuItem
+            // 
+            this.recibosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cobradosEnOficinaToolStripMenuItem});
+            this.recibosToolStripMenuItem.Name = "recibosToolStripMenuItem";
+            this.recibosToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.recibosToolStripMenuItem.Text = "Recibos";
+            // 
+            // cobradosEnOficinaToolStripMenuItem
+            // 
+            this.cobradosEnOficinaToolStripMenuItem.Name = "cobradosEnOficinaToolStripMenuItem";
+            this.cobradosEnOficinaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cobradosEnOficinaToolStripMenuItem.Text = "cobrados en oficina";
+            this.cobradosEnOficinaToolStripMenuItem.Click += new System.EventHandler(this.cobradosEnOficinaToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Red;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -152,6 +180,7 @@ namespace DynamicBrokerCaja
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dynamic Broker Caja";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Main_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -173,6 +202,9 @@ namespace DynamicBrokerCaja
         private System.Windows.Forms.ToolStripMenuItem cobranzaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mercadoPointToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem calcularCuotaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem recibosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cobradosEnOficinaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem iPDelServidorToolStripMenuItem;
     }
 }
 
