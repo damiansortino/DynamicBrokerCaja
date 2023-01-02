@@ -251,7 +251,8 @@ namespace DynamicBrokerCaja.Views
         {
             tbCliente.Text = BuscarCliente(int.Parse(tbBarra.Text.Substring(22, 8)));
             dtpVencimientoRecibo.Value = BuscarVencimiento(tbBarra.Text.Substring(22, 8)).Date;
-            tbPoliza.Text = tbBarra.Text.Substring(22, 8);
+            tbPoliza.Text = PolizadeInterfaz(tbBarra.Text.Substring(22, 8)); 
+                
             tbEndoso.Text = tbBarra.Text.Substring(30, 6);
             tbImporte.Text = tbBarra.Text.Substring(6, 6) + "." + tbBarra.Text.Substring(12, 2);
             tbCuota.Text = tbBarra.Text.Substring(36, 2);
@@ -259,6 +260,39 @@ namespace DynamicBrokerCaja.Views
             {
                 cbRama.Text = DB.Rama.ToList().Find(x => x.Codigo == tbBarra.Text.Substring(20, 2)).Nombre;
             }
+        }
+
+        private string PolizadeInterfaz(string v)
+        {
+            DirectoryInfo folder = new DirectoryInfo(ConfigurationManager.ConnectionStrings["InterfazParana"].ConnectionString + "/Emision");
+            IEnumerable<FileInfo> files = folder.GetFiles().OrderBy(x => x.CreationTime);
+            XmlDocument documento = new XmlDocument();
+
+            foreach (var item in files)
+            {
+                documento.Load(item.FullName);
+                foreach (XmlElement elemento in documento.DocumentElement)
+                {
+                    if (elemento.Name == "operaciones")
+                    {
+                        foreach (XmlElement operacion in elemento.ChildNodes)
+                        {
+                            foreach (XmlElement campo in operacion.ChildNodes)
+                            {
+                                if ((campo.Name == "poliza" && campo.InnerText == v || (campo.Name == "asociada" && campo.InnerText == v)))
+                                {
+                                    return operacion.ChildNodes[1].InnerText;
+                                }
+                            }
+                        }
+
+
+                    }
+
+                }
+
+            }
+            return v;
         }
 
         private DateTime BuscarVencimiento(string v)
@@ -339,15 +373,6 @@ namespace DynamicBrokerCaja.Views
         }
 
 
-        // cambiar esto
-        private void Comprectura()
-        {
-
-
-        }
-
-        //
-
         private bool ComprobarBarra()
         {
             if (tbBarra.Text.Substring(0, 6) == "094330")
@@ -364,6 +389,14 @@ namespace DynamicBrokerCaja.Views
         private void tbBarra_Leave(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbMedioPago_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                btnAceptar.Focus();
+            }
         }
     }
 }

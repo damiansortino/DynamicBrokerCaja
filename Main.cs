@@ -1,6 +1,12 @@
-﻿using DynamicBrokerCaja.Views;
+﻿using DynamicBrokerCaja.Models;
+using DynamicBrokerCaja.Views;
 using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace DynamicBrokerCaja
 {
@@ -42,8 +48,12 @@ namespace DynamicBrokerCaja
         private void Main_Load(object sender, EventArgs e)
         {
 
+            
         }
 
+        
+
+        
         private void iPDelServidorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //

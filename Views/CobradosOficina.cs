@@ -22,7 +22,7 @@ namespace DynamicBrokerCaja.Views
         private void UltimasCobranzas()
         {
             List<RecibosDGV> lista = new List<RecibosDGV>();
-            
+
             using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
             {
                 foreach (Movimiento mov in DB.Movimiento)
@@ -99,11 +99,17 @@ namespace DynamicBrokerCaja.Views
                     " criterio, en breve estará disponible. Mientras " +
                     "tanto podés utilizar esta función buscando por número de póliza");
             }
-            
+
 
             //continuar programando los demas criterios de búsqueda
 
+            ////////////Criterio Patente ////////////
+
+
+
         }
+
+
 
         private void tbFiltro_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -121,9 +127,10 @@ namespace DynamicBrokerCaja.Views
                     .FindAll(x => x.ReciboId == int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()))[0];
 
                 lbl_FechaCobro.Text = seleccionado.Fecha.ToString();
+                lblMedioPago.Text = DB.MedioPago.Find(seleccionado.MedioPagoId).Nombre;
                 gbLabels.Visible = true;
             }
-            
+
         }
     }
 }

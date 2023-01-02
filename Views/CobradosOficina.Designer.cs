@@ -40,10 +40,10 @@ namespace DynamicBrokerCaja.Views
             this.label4 = new System.Windows.Forms.Label();
             this.lblMedioPago = new System.Windows.Forms.Label();
             this.gbLabels = new System.Windows.Forms.GroupBox();
-            this.lbl_Asegurado = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.lblRiesgo = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lbl_Asegurado = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbLabels.SuspendLayout();
             this.SuspendLayout();
@@ -53,13 +53,13 @@ namespace DynamicBrokerCaja.Views
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 265);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 191);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(955, 373);
+            this.dataGridView1.Size = new System.Drawing.Size(955, 447);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -170,30 +170,10 @@ namespace DynamicBrokerCaja.Views
             this.gbLabels.Controls.Add(this.label4);
             this.gbLabels.Location = new System.Drawing.Point(14, 68);
             this.gbLabels.Name = "gbLabels";
-            this.gbLabels.Size = new System.Drawing.Size(863, 115);
+            this.gbLabels.Size = new System.Drawing.Size(863, 101);
             this.gbLabels.TabIndex = 10;
             this.gbLabels.TabStop = false;
             this.gbLabels.Visible = false;
-            // 
-            // lbl_Asegurado
-            // 
-            this.lbl_Asegurado.AutoSize = true;
-            this.lbl_Asegurado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Asegurado.Location = new System.Drawing.Point(542, 16);
-            this.lbl_Asegurado.Name = "lbl_Asegurado";
-            this.lbl_Asegurado.Size = new System.Drawing.Size(60, 24);
-            this.lbl_Asegurado.TabIndex = 11;
-            this.lbl_Asegurado.Text = "label5";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(411, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 24);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Asegurado";
             // 
             // lblRiesgo
             // 
@@ -214,6 +194,26 @@ namespace DynamicBrokerCaja.Views
             this.label7.Size = new System.Drawing.Size(69, 24);
             this.label7.TabIndex = 12;
             this.label7.Text = "Riesgo";
+            // 
+            // lbl_Asegurado
+            // 
+            this.lbl_Asegurado.AutoSize = true;
+            this.lbl_Asegurado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Asegurado.Location = new System.Drawing.Point(542, 16);
+            this.lbl_Asegurado.Name = "lbl_Asegurado";
+            this.lbl_Asegurado.Size = new System.Drawing.Size(60, 24);
+            this.lbl_Asegurado.TabIndex = 11;
+            this.lbl_Asegurado.Text = "label5";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(411, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 24);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Asegurado";
             // 
             // CobradosOficina
             // 

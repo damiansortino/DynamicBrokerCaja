@@ -106,8 +106,9 @@ namespace DynamicBrokerCaja.Views
             this.cbMedioPago.FormattingEnabled = true;
             this.cbMedioPago.Location = new System.Drawing.Point(147, 406);
             this.cbMedioPago.Name = "cbMedioPago";
-            this.cbMedioPago.Size = new System.Drawing.Size(121, 24);
+            this.cbMedioPago.Size = new System.Drawing.Size(207, 24);
             this.cbMedioPago.TabIndex = 11;
+            this.cbMedioPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbMedioPago_KeyPress);
             // 
             // label6
             // 

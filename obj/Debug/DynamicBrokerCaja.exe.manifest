@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DynamicBrokerCaja.exe" size="186336">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DynamicBrokerCaja.exe" size="187360">
       <assemblyIdentity name="DynamicBrokerCaja" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+WR5a3mXNp9D/CqVgDz3iNIrHZpc/mZ3MeCXpbuxFjw=</dsig:DigestValue>
+        <dsig:DigestValue>8DIAkgRSmtr2pkhoBVN97FqPWk0A9QxRwb8r4sFDaBw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -95,6 +95,15 @@
       <dsig:DigestValue>oPas+0ZKpZNLmiElj5P1cfnaijYrH2UHDEY4oEb3nkI=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="img\Efectivo.png" size="3276">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>kSteBD3nvbczOwDFr6dBm8bFM8+j9Hkss9Tz/9FVvso=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="img\iconDelete.png" size="1547">
     <hash>
       <dsig:Transforms>
@@ -120,6 +129,33 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>JV4mfLpsLeqNok9k+rKb1oqOT2+1ZAt2+pRJXHY21JU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="img\Transferencia Galicia Move.png" size="4279">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>WJqR9XvVUcBqd9pzjV+GLRvAZIpktuhBYwP4fb6uJsM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="img\Transferencia Macro.png" size="3612">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>92MtL5wDwvA47N57+hyoGTrKxPIGc5n8aKqC4eQpsnE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="img\Transferencia NX.png" size="3351">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>zB5umX55ckRvhOMY07LQyFVxY24WuYWu9rJf8byjTlw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Models\Model1.Context.tt" size="22930">

@@ -7,14 +7,14 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="DynamicBrokerCaja.exe.manifest" size="7355">
+    <dependentAssembly dependencyType="install" codebase="DynamicBrokerCaja.exe.manifest" size="8968">
       <assemblyIdentity name="DynamicBrokerCaja.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ApScxZ3hr94JxbTlQpgestTfUW3WSdi4HzbA3N7oFGY=</dsig:DigestValue>
+        <dsig:DigestValue>IUBYnzTdWqmE+VmR0a5o1UW39qRuTx/dCRMS9Dj71Do=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

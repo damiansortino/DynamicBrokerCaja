@@ -282,9 +282,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodigosDeError.txt" />
+    <Content Include="img\Efectivo.png" />
     <Content Include="img\iconDelete.png" />
     <Content Include="img\iconRefresh.png" />
     <Content Include="img\mercadopoint.png" />
+    <Content Include="img\Transferencia Galicia Move.png" />
+    <Content Include="img\Transferencia Macro.png" />
+    <Content Include="img\Transferencia NX.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
