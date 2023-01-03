@@ -28,7 +28,6 @@ D:\GIT\DynamicBrokerCaja\bin\Debug\EntityFramework.dll
 D:\GIT\DynamicBrokerCaja\bin\Debug\EntityFramework.SqlServer.dll
 D:\GIT\DynamicBrokerCaja\bin\Debug\EntityFramework.xml
 D:\GIT\DynamicBrokerCaja\bin\Debug\EntityFramework.SqlServer.xml
-D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.csproj.AssemblyReference.cache
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Main.resources
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Properties.Resources.resources
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.CalculadoraPoint.resources

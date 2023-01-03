@@ -16,6 +16,8 @@ namespace DynamicBrokerCaja.Views
 
         private void CobradosOficina_Load(object sender, EventArgs e)
         {
+            cboxCriterio.Text = "Póliza";
+            tbFiltro.Focus();
             UltimasCobranzas();
         }
 

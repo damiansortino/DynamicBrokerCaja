@@ -184,6 +184,7 @@ namespace DynamicBrokerCaja.Views
             this.lblRiesgo.Size = new System.Drawing.Size(60, 24);
             this.lblRiesgo.TabIndex = 13;
             this.lblRiesgo.Text = "label5";
+            this.lblRiesgo.Visible = false;
             // 
             // label7
             // 
@@ -194,6 +195,7 @@ namespace DynamicBrokerCaja.Views
             this.label7.Size = new System.Drawing.Size(69, 24);
             this.label7.TabIndex = 12;
             this.label7.Text = "Riesgo";
+            this.label7.Visible = false;
             // 
             // lbl_Asegurado
             // 
@@ -204,6 +206,7 @@ namespace DynamicBrokerCaja.Views
             this.lbl_Asegurado.Size = new System.Drawing.Size(60, 24);
             this.lbl_Asegurado.TabIndex = 11;
             this.lbl_Asegurado.Text = "label5";
+            this.lbl_Asegurado.Visible = false;
             // 
             // label5
             // 
@@ -214,6 +217,7 @@ namespace DynamicBrokerCaja.Views
             this.label5.Size = new System.Drawing.Size(103, 24);
             this.label5.TabIndex = 10;
             this.label5.Text = "Asegurado";
+            this.label5.Visible = false;
             // 
             // CobradosOficina
             // 
