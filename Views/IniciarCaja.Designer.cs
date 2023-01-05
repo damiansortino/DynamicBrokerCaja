@@ -50,6 +50,7 @@ namespace DynamicBrokerCaja.Views
             this.tbEfectivoCaja.Name = "tbEfectivoCaja";
             this.tbEfectivoCaja.Size = new System.Drawing.Size(160, 20);
             this.tbEfectivoCaja.TabIndex = 1;
+            this.tbEfectivoCaja.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbEfectivoCaja_KeyPress);
             // 
             // btnIniciar
             // 
@@ -63,6 +64,7 @@ namespace DynamicBrokerCaja.Views
             // 
             // btnCancelar
             // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(320, 129);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);

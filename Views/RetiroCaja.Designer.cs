@@ -71,6 +71,7 @@ namespace DynamicBrokerCaja.Views
             this.tbImporte.Name = "tbImporte";
             this.tbImporte.Size = new System.Drawing.Size(105, 20);
             this.tbImporte.TabIndex = 3;
+            this.tbImporte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbImporte_KeyPress);
             // 
             // textBox2
             // 
@@ -91,6 +92,7 @@ namespace DynamicBrokerCaja.Views
             // 
             // btnCancelar
             // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(292, 188);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);

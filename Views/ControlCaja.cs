@@ -341,5 +341,41 @@ namespace DynamicBrokerCaja.Views
                 DB.SaveChanges();
             }
         }
+
+        private void ControlCaja_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            switch (e.KeyChar)
+            {
+                case (char)49:
+
+                    btnNuevoCobro.PerformClick();
+                    e.Handled = true;
+                    break;
+
+                case (char)50:
+                    btnIniciarCaja.PerformClick();
+                    e.Handled = true;
+                    break;
+                case (char)51:
+                    btnCerrarCaja.PerformClick();
+                    e.Handled = true;
+                    break;
+                case (char)52:
+                    btnRetiroCaja.PerformClick();
+                    e.Handled = true;
+                    break;
+                case (char)53:
+                    btnOtrosMovimientos.PerformClick();
+                    e.Handled = true;
+                    break;
+
+                default:
+
+                    MessageBox.Show("No hay funcion programada, pruebe con otra opción");
+                    e.Handled = true;
+                    break;
+
+            }
+        }
     }
 }

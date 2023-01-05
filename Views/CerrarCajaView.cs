@@ -219,5 +219,14 @@ namespace DynamicBrokerCaja.Views
         {
             this.Close();
         }
+
+        private void tbImporteCierre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                e.Handled = true;
+                btnOK.PerformClick();
+            }
+        }
     }
 }

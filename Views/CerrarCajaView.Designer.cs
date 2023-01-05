@@ -53,6 +53,7 @@ namespace DynamicBrokerCaja.Views
             this.tbImporteCierre.Size = new System.Drawing.Size(164, 20);
             this.tbImporteCierre.TabIndex = 1;
             this.tbImporteCierre.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbImporteCierre_MouseClick);
+            this.tbImporteCierre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbImporteCierre_KeyPress);
             // 
             // btnCerrarCaja
             // 

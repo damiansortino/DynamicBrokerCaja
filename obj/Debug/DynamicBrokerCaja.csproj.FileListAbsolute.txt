@@ -30,6 +30,7 @@ D:\GIT\DynamicBrokerCaja\bin\Debug\EntityFramework.xml
 D:\GIT\DynamicBrokerCaja\bin\Debug\EntityFramework.SqlServer.xml
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Main.resources
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Properties.Resources.resources
+D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.CajasAnteriores.resources
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.CalculadoraPoint.resources
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.CerrarCajaView.resources
 D:\GIT\DynamicBrokerCaja\obj\Debug\DynamicBrokerCaja.Views.CobradosOficina.resources

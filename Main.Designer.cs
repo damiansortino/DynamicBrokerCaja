@@ -83,6 +83,7 @@ namespace DynamicBrokerCaja
             this.verCajasAnterioresToolStripMenuItem.Name = "verCajasAnterioresToolStripMenuItem";
             this.verCajasAnterioresToolStripMenuItem.Size = new System.Drawing.Size(288, 30);
             this.verCajasAnterioresToolStripMenuItem.Text = "VER CAJAS ANTERIORES";
+            this.verCajasAnterioresToolStripMenuItem.Click += new System.EventHandler(this.verCajasAnterioresToolStripMenuItem_Click);
             // 
             // configuraciónToolStripMenuItem
             // 

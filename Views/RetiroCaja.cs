@@ -27,23 +27,18 @@ namespace DynamicBrokerCaja.Views
                 {
                     Movimiento nuevo = CrearMovimiento();
                     GuardarMovimiento(nuevo);
-
-                    MessageBox.Show("Retiro Existoso" + " Actualmente hay $ " + ImporteCaja().ToString() + " en su caja.");
-
+                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("No es posible realizar esta operación, el dinero disponible en la caja" +
                     " no es suficiente para el retiro que intenta realizar." + "\n" + "Efectivo en Caja $ " + ImporteCaja());
-
-                    this.Close();
                 }
             }
             else
             {
                 MessageBox.Show("Error, compruebe que todos los campos estén completos");
             }
-            this.Close();
         }
 
         private bool VerificarMontoRetiro()
@@ -125,6 +120,15 @@ namespace DynamicBrokerCaja.Views
                 return true;
             }
             return false;
+        }
+
+        private void tbImporte_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                e.Handled = true;
+                btnAceptar.Focus();
+            }
         }
     }
 }

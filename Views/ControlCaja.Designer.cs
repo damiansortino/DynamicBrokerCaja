@@ -29,9 +29,9 @@ namespace DynamicBrokerCaja.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvMovimientos = new System.Windows.Forms.DataGridView();
             this.btnNuevoCobro = new System.Windows.Forms.Button();
             this.btnIniciarCaja = new System.Windows.Forms.Button();
@@ -47,27 +47,27 @@ namespace DynamicBrokerCaja.Views
             // 
             // dgvMovimientos
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvMovimientos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvMovimientos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvMovimientos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvMovimientos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMovimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMovimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMovimientos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMovimientos.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvMovimientos.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvMovimientos.Location = new System.Drawing.Point(0, 173);
             this.dgvMovimientos.MultiSelect = false;
@@ -86,7 +86,7 @@ namespace DynamicBrokerCaja.Views
             this.btnNuevoCobro.Name = "btnNuevoCobro";
             this.btnNuevoCobro.Size = new System.Drawing.Size(181, 35);
             this.btnNuevoCobro.TabIndex = 1;
-            this.btnNuevoCobro.Text = "Nuevo Cobro (F1)";
+            this.btnNuevoCobro.Text = "Nuevo Cobro (1)";
             this.btnNuevoCobro.UseVisualStyleBackColor = true;
             this.btnNuevoCobro.Click += new System.EventHandler(this.btnNuevoCobro_Click);
             // 
@@ -97,7 +97,7 @@ namespace DynamicBrokerCaja.Views
             this.btnIniciarCaja.Name = "btnIniciarCaja";
             this.btnIniciarCaja.Size = new System.Drawing.Size(181, 35);
             this.btnIniciarCaja.TabIndex = 2;
-            this.btnIniciarCaja.Text = "IniciarCaja (F2)";
+            this.btnIniciarCaja.Text = "IniciarCaja (2)";
             this.btnIniciarCaja.UseVisualStyleBackColor = true;
             this.btnIniciarCaja.Click += new System.EventHandler(this.btnIniciarCaja_Click);
             // 
@@ -108,7 +108,7 @@ namespace DynamicBrokerCaja.Views
             this.btnCerrarCaja.Name = "btnCerrarCaja";
             this.btnCerrarCaja.Size = new System.Drawing.Size(181, 35);
             this.btnCerrarCaja.TabIndex = 3;
-            this.btnCerrarCaja.Text = "CerrarCaja (F3)";
+            this.btnCerrarCaja.Text = "CerrarCaja (3)";
             this.btnCerrarCaja.UseVisualStyleBackColor = true;
             this.btnCerrarCaja.Click += new System.EventHandler(this.btnCerrarCaja_Click);
             // 
@@ -129,7 +129,7 @@ namespace DynamicBrokerCaja.Views
             this.btnRetiroCaja.Name = "btnRetiroCaja";
             this.btnRetiroCaja.Size = new System.Drawing.Size(181, 35);
             this.btnRetiroCaja.TabIndex = 6;
-            this.btnRetiroCaja.Text = "Retiro de Caja (F4)";
+            this.btnRetiroCaja.Text = "Retiro de Caja (4)";
             this.btnRetiroCaja.UseVisualStyleBackColor = true;
             this.btnRetiroCaja.Click += new System.EventHandler(this.btnRetiroCaja_Click);
             // 
@@ -140,7 +140,7 @@ namespace DynamicBrokerCaja.Views
             this.btnOtrosMovimientos.Name = "btnOtrosMovimientos";
             this.btnOtrosMovimientos.Size = new System.Drawing.Size(208, 35);
             this.btnOtrosMovimientos.TabIndex = 7;
-            this.btnOtrosMovimientos.Text = "Otros Movimientos (F5)";
+            this.btnOtrosMovimientos.Text = "Otros Movimientos (5)";
             this.btnOtrosMovimientos.UseVisualStyleBackColor = true;
             this.btnOtrosMovimientos.Click += new System.EventHandler(this.btnOtrosMovimientos_Click);
             // 
@@ -192,6 +192,7 @@ namespace DynamicBrokerCaja.Views
             this.Controls.Add(this.btnIniciarCaja);
             this.Controls.Add(this.btnNuevoCobro);
             this.Controls.Add(this.dgvMovimientos);
+            this.KeyPreview = true;
             this.Name = "ControlCaja";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -199,6 +200,7 @@ namespace DynamicBrokerCaja.Views
             this.Text = "Caja";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Caja_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ControlCaja_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

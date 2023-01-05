@@ -251,8 +251,8 @@ namespace DynamicBrokerCaja.Views
         {
             tbCliente.Text = BuscarCliente(int.Parse(tbBarra.Text.Substring(22, 8)));
             dtpVencimientoRecibo.Value = BuscarVencimiento(tbBarra.Text.Substring(22, 8)).Date;
-            tbPoliza.Text = PolizadeInterfaz(tbBarra.Text.Substring(22, 8)); 
-                
+            tbPoliza.Text = PolizadeInterfaz(tbBarra.Text.Substring(22, 8));
+
             tbEndoso.Text = tbBarra.Text.Substring(30, 6);
             tbImporte.Text = tbBarra.Text.Substring(6, 6) + "." + tbBarra.Text.Substring(12, 2);
             tbCuota.Text = tbBarra.Text.Substring(36, 2);

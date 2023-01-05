@@ -52,8 +52,6 @@ namespace DynamicBrokerCaja.Views
                     GuardarMovimiento(nuevo);
                     this.Close();
 
-                    MessageBox.Show("Movimiento exitoso" + " \n Actualmente hay $ " + ImporteCaja().ToString() + " en su caja.");
-
                 }
                 else
                 {
@@ -62,9 +60,6 @@ namespace DynamicBrokerCaja.Views
                         Movimiento nuevo = CrearMovimiento();
                         GuardarMovimiento(nuevo);
                         this.Close();
-
-                        MessageBox.Show("Movimiento existoso" + " \n Actualmente hay $ " + ImporteCaja().ToString() + " en su caja.");
-
                     }
                     else
                     {

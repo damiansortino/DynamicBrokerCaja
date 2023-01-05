@@ -91,6 +91,7 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Auxiliares\Caja_DGV.cs" />
     <Compile Include="Models\Auxiliares\MovimientosParaDGV.cs" />
     <Compile Include="Models\Auxiliares\RecibosDGV.cs" />
     <Compile Include="Models\Caja.cs">
@@ -150,6 +151,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CajasAnteriores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CajasAnteriores.Designer.cs">
+      <DependentUpon>CajasAnteriores.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\CalculadoraPoint.cs">
       <SubType>Form</SubType>
@@ -224,6 +231,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CajasAnteriores.resx">
+      <DependentUpon>CajasAnteriores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CalculadoraPoint.resx">
       <DependentUpon>CalculadoraPoint.cs</DependentUpon>
