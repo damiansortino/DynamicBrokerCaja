@@ -84,7 +84,7 @@ namespace DynamicBrokerCaja.Views
                 using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
                 {
                     movimientos = DB.Movimiento.ToList()
-                        .FindAll(x => x.CajaId == id && x.MedioPagoId == 1).FindAll(x => x.FechaBaja == null);
+                        .FindAll(x => x.CajaId == id).FindAll(x => x.FechaBaja == null);
                 }
             }
             catch (Exception)
@@ -179,6 +179,8 @@ namespace DynamicBrokerCaja.Views
 
         private void btnCerrarCaja_Click(object sender, EventArgs e)
         {
+                       
+
             lblEfectivoCaja.Text = "";
             if (!ExisteCajaAbierta())
             {
@@ -186,8 +188,42 @@ namespace DynamicBrokerCaja.Views
             }
             else
             {
+                AlertaRecibosFDC();
                 CerrarCaja(CajaActual().Id);
             }
+        }
+
+        private void AlertaRecibosFDC()
+        {
+            using (DynamicBrokerEntities DB = new DynamicBrokerEntities())
+            {
+                List<Recibo> fdc = new List<Recibo>();
+                string mensaje = "";
+
+                foreach (Movimiento item in DB.Movimiento.ToList().FindAll(x=>x.CajaId == CajaActual().Id))
+                {
+                    if (item.TipoMovId == 8)
+                    {
+                        Recibo nuevo = DB.Recibo.Find(item.ReciboId);
+
+                        if (nuevo.Vencimiento <= DateTime.Now.Date.AddDays(-13))
+                        {
+                            fdc.Add(nuevo);
+                            mensaje = mensaje + "Póliza Nº: " + nuevo.Poliza + " Importe $ " + nuevo.Importe.ToString() + "\n";
+                        }
+                    }
+                    
+                }
+
+
+                if (fdc.Count()>0)
+                {
+                    MessageBox.Show("Alerta, puede que los siguientes recibos cobrados hoy se encuentren fuera de convenio"+ "\n \n \n" + mensaje);
+                }
+
+
+            }
+        
         }
 
         private void CerrarCaja(int id)

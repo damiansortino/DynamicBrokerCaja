@@ -26,7 +26,6 @@ namespace DynamicBrokerCaja.Models
         public Nullable<System.DateTime> FechaNac { get; set; }
         public string Domicilio { get; set; }
         public string Telefono { get; set; }
-        public int EstadoCivilId { get; set; }
         public string email { get; set; }
         public string ActividadComercial { get; set; }
         public int CondFiscalId { get; set; }
@@ -35,7 +34,6 @@ namespace DynamicBrokerCaja.Models
         public Nullable<System.DateTime> fechabaja { get; set; }
     
         public virtual CondFiscal CondFiscal { get; set; }
-        public virtual EstadoCivil EstadoCivil { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Recibo> Recibo { get; set; }
     }

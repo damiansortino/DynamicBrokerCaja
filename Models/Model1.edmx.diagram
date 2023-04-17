@@ -6,7 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="47b73896f7a5491bb393819b2f49a2ca" Name="Diagram1">
         <EntityTypeShape EntityType="DynamicBrokerModel.CondFiscal" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DynamicBrokerModel.EstadoCivil" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DynamicBrokerModel.EstadoPlanillaRendicion" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DynamicBrokerModel.MedioPago" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DynamicBrokerModel.Rama" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
@@ -22,7 +21,6 @@
         <EntityTypeShape EntityType="DynamicBrokerModel.Cliente" Width="1.5" PointX="3" PointY="1" />
         <EntityTypeShape EntityType="DynamicBrokerModel.Recibo" Width="1.5" PointX="5.25" PointY="4.75" />
         <AssociationConnector Association="DynamicBrokerModel.FK_Cliente_CondFiscal" />
-        <AssociationConnector Association="DynamicBrokerModel.FK_Cliente_EstadoCivil" />
         <AssociationConnector Association="DynamicBrokerModel.FK_Recibo_Cliente" />
         <AssociationConnector Association="DynamicBrokerModel.FK_Movimiento_Recibo" />
         <AssociationConnector Association="DynamicBrokerModel.FK_Recibo_PlanillaRendicionCobranza" />

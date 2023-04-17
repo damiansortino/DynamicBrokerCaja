@@ -9,14 +9,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="EstadoCivil">
-      <EntityTypeMapping TypeName="DynamicBrokerModel.EstadoCivil">
-        <MappingFragment StoreEntitySet="EstadoCivil">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="EstadoPlanillaRendicion">
       <EntityTypeMapping TypeName="DynamicBrokerModel.EstadoPlanillaRendicion">
         <MappingFragment StoreEntitySet="EstadoPlanillaRendicion">
@@ -107,7 +99,6 @@
           <ScalarProperty Name="CondFiscalId" ColumnName="CondFiscalId" />
           <ScalarProperty Name="ActividadComercial" ColumnName="ActividadComercial" />
           <ScalarProperty Name="email" ColumnName="email" />
-          <ScalarProperty Name="EstadoCivilId" ColumnName="EstadoCivilId" />
           <ScalarProperty Name="Telefono" ColumnName="Telefono" />
           <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
           <ScalarProperty Name="FechaNac" ColumnName="FechaNac" />

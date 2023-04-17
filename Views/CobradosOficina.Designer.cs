@@ -53,13 +53,13 @@ namespace DynamicBrokerCaja.Views
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 191);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 175);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(955, 447);
+            this.dataGridView1.Size = new System.Drawing.Size(1109, 371);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -223,7 +223,7 @@ namespace DynamicBrokerCaja.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 638);
+            this.ClientSize = new System.Drawing.Size(1109, 546);
             this.Controls.Add(this.gbLabels);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnBuscar);
@@ -241,6 +241,7 @@ namespace DynamicBrokerCaja.Views
             this.Text = "Cobranzas Locales";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.CobradosOficina_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CobradosOficina_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gbLabels.ResumeLayout(false);
             this.gbLabels.PerformLayout();

@@ -36,6 +36,7 @@ namespace DynamicBrokerCaja
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carpetaDeInterfazParanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iPDelServidorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoMovimientoCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.interfazToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paranaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emisionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +45,9 @@ namespace DynamicBrokerCaja
             this.calcularCuotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recibosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cobradosEnOficinaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pbar_1 = new System.Windows.Forms.ProgressBar();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.actualizarInterfaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +59,8 @@ namespace DynamicBrokerCaja
             this.configuraciónToolStripMenuItem,
             this.interfazToolStripMenuItem,
             this.mercadoPointToolStripMenuItem,
-            this.recibosToolStripMenuItem});
+            this.recibosToolStripMenuItem,
+            this.clientesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 33);
@@ -89,7 +94,8 @@ namespace DynamicBrokerCaja
             // 
             this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.carpetaDeInterfazParanaToolStripMenuItem,
-            this.iPDelServidorToolStripMenuItem});
+            this.iPDelServidorToolStripMenuItem,
+            this.tipoMovimientoCajaToolStripMenuItem});
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(144, 29);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
@@ -108,6 +114,12 @@ namespace DynamicBrokerCaja
             this.iPDelServidorToolStripMenuItem.Text = "IP del Servidor";
             this.iPDelServidorToolStripMenuItem.Click += new System.EventHandler(this.iPDelServidorToolStripMenuItem_Click);
             // 
+            // tipoMovimientoCajaToolStripMenuItem
+            // 
+            this.tipoMovimientoCajaToolStripMenuItem.Name = "tipoMovimientoCajaToolStripMenuItem";
+            this.tipoMovimientoCajaToolStripMenuItem.Size = new System.Drawing.Size(308, 30);
+            this.tipoMovimientoCajaToolStripMenuItem.Text = "Tipo Movimiento Caja";
+            // 
             // interfazToolStripMenuItem
             // 
             this.interfazToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -122,7 +134,7 @@ namespace DynamicBrokerCaja
             this.emisionToolStripMenuItem,
             this.cobranzaToolStripMenuItem});
             this.paranaToolStripMenuItem.Name = "paranaToolStripMenuItem";
-            this.paranaToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.paranaToolStripMenuItem.Size = new System.Drawing.Size(142, 30);
             this.paranaToolStripMenuItem.Text = "Paraná";
             // 
             // emisionToolStripMenuItem
@@ -130,6 +142,7 @@ namespace DynamicBrokerCaja
             this.emisionToolStripMenuItem.Name = "emisionToolStripMenuItem";
             this.emisionToolStripMenuItem.Size = new System.Drawing.Size(165, 30);
             this.emisionToolStripMenuItem.Text = "Emisión";
+            this.emisionToolStripMenuItem.Click += new System.EventHandler(this.emisionToolStripMenuItem_Click);
             // 
             // cobranzaToolStripMenuItem
             // 
@@ -167,12 +180,36 @@ namespace DynamicBrokerCaja
             this.cobradosEnOficinaToolStripMenuItem.Text = "cobrados en oficina";
             this.cobradosEnOficinaToolStripMenuItem.Click += new System.EventHandler(this.cobradosEnOficinaToolStripMenuItem_Click);
             // 
+            // pbar_1
+            // 
+            this.pbar_1.Location = new System.Drawing.Point(30, 61);
+            this.pbar_1.Name = "pbar_1";
+            this.pbar_1.Size = new System.Drawing.Size(407, 23);
+            this.pbar_1.TabIndex = 3;
+            this.pbar_1.Visible = false;
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.actualizarInterfaceToolStripMenuItem});
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(91, 29);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            // 
+            // actualizarInterfaceToolStripMenuItem
+            // 
+            this.actualizarInterfaceToolStripMenuItem.Name = "actualizarInterfaceToolStripMenuItem";
+            this.actualizarInterfaceToolStripMenuItem.Size = new System.Drawing.Size(247, 30);
+            this.actualizarInterfaceToolStripMenuItem.Text = "Actualizar interface";
+            this.actualizarInterfaceToolStripMenuItem.Click += new System.EventHandler(this.actualizarInterfaceToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pbar_1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -206,6 +243,10 @@ namespace DynamicBrokerCaja
         private System.Windows.Forms.ToolStripMenuItem recibosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cobradosEnOficinaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iPDelServidorToolStripMenuItem;
+        private System.Windows.Forms.ProgressBar pbar_1;
+        private System.Windows.Forms.ToolStripMenuItem tipoMovimientoCajaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem actualizarInterfaceToolStripMenuItem;
     }
 }
 

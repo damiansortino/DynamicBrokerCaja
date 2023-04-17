@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DynamicBrokerCaja.exe" size="190944">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DynamicBrokerCaja.exe" size="200672">
       <assemblyIdentity name="DynamicBrokerCaja" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qrbEMtK8m6ra5nKBjriGTjCGfdi81es61gRoef/2fpw=</dsig:DigestValue>
+        <dsig:DigestValue>98bCIrBosRVVlscSzXkQ2PBw/h72Jk/tSu7QSKRlyMg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

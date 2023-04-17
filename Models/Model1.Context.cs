@@ -26,7 +26,6 @@ namespace DynamicBrokerCaja.Models
         }
     
         public virtual DbSet<CondFiscal> CondFiscal { get; set; }
-        public virtual DbSet<EstadoCivil> EstadoCivil { get; set; }
         public virtual DbSet<EstadoPlanillaRendicion> EstadoPlanillaRendicion { get; set; }
         public virtual DbSet<MedioPago> MedioPago { get; set; }
         public virtual DbSet<Rama> Rama { get; set; }

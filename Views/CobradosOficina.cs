@@ -16,9 +16,17 @@ namespace DynamicBrokerCaja.Views
 
         private void CobradosOficina_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
             cboxCriterio.Text = "Póliza";
             tbFiltro.Focus();
+            ActualizarRecibos();
             UltimasCobranzas();
+        }
+
+        private void ActualizarRecibos()
+        {
+            //programa actualizar recibos
+
         }
 
         private void UltimasCobranzas()
@@ -133,6 +141,15 @@ namespace DynamicBrokerCaja.Views
                 gbLabels.Visible = true;
             }
 
+        }
+
+        private void CobradosOficina_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Escape)
+            {
+                e.Handled = true;
+                this.Close();
+            }
         }
     }
 }

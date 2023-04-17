@@ -94,6 +94,7 @@
     <Compile Include="Models\Auxiliares\Caja_DGV.cs" />
     <Compile Include="Models\Auxiliares\MovimientosParaDGV.cs" />
     <Compile Include="Models\Auxiliares\RecibosDGV.cs" />
+    <Compile Include="Models\Auxiliares\Emision_Interfaz.cs" />
     <Compile Include="Models\Caja.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -101,9 +102,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CondFiscal.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EstadoCivil.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EstadoPlanillaRendicion.cs">
@@ -224,6 +222,12 @@
     <Compile Include="Views\RetiroCaja.Designer.cs">
       <DependentUpon>RetiroCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\TipoMovCaja_ABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TipoMovCaja_ABM.Designer.cs">
+      <DependentUpon>TipoMovCaja_ABM.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\RetiroCaja.resx">
       <DependentUpon>RetiroCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TipoMovCaja_ABM.resx">
+      <DependentUpon>TipoMovCaja_ABM.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

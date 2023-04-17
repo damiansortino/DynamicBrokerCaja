@@ -26,7 +26,6 @@
           <Property Name="FechaNac" Type="date" />
           <Property Name="Domicilio" Type="varchar" MaxLength="200" />
           <Property Name="Telefono" Type="varchar" MaxLength="50" />
-          <Property Name="EstadoCivilId" Type="int" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="200" />
           <Property Name="ActividadComercial" Type="varchar" MaxLength="200" />
           <Property Name="CondFiscalId" Type="int" Nullable="false" />
@@ -35,13 +34,6 @@
           <Property Name="fechabaja" Type="datetime" />
         </EntityType>
         <EntityType Name="CondFiscal">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
-        </EntityType>
-        <EntityType Name="EstadoCivil">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -137,18 +129,6 @@
             </Principal>
             <Dependent Role="Cliente">
               <PropertyRef Name="CondFiscalId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Cliente_EstadoCivil">
-          <End Role="EstadoCivil" Type="Self.EstadoCivil" Multiplicity="1" />
-          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EstadoCivil">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Cliente">
-              <PropertyRef Name="EstadoCivilId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -252,7 +232,6 @@
           <EntitySet Name="Caja" EntityType="Self.Caja" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CondFiscal" EntityType="Self.CondFiscal" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="EstadoCivil" EntityType="Self.EstadoCivil" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EstadoPlanillaRendicion" EntityType="Self.EstadoPlanillaRendicion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MedioPago" EntityType="Self.MedioPago" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Movimiento" EntityType="Self.Movimiento" Schema="dbo" store:Type="Tables" />
@@ -263,10 +242,6 @@
           <EntitySet Name="TipoMovimientoCaja" EntityType="Self.TipoMovimientoCaja" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Cliente_CondFiscal" Association="Self.FK_Cliente_CondFiscal">
             <End Role="CondFiscal" EntitySet="CondFiscal" />
-            <End Role="Cliente" EntitySet="Cliente" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cliente_EstadoCivil" Association="Self.FK_Cliente_EstadoCivil">
-            <End Role="EstadoCivil" EntitySet="EstadoCivil" />
             <End Role="Cliente" EntitySet="Cliente" />
           </AssociationSet>
           <AssociationSet Name="FK_Movimiento_Caja" Association="Self.FK_Movimiento_Caja">
@@ -313,14 +288,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="DynamicBrokerModel.FK_Cliente_CondFiscal" FromRole="CondFiscal" ToRole="Cliente" />
-        </EntityType>
-        <EntityType Name="EstadoCivil">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Cliente" Relationship="DynamicBrokerModel.FK_Cliente_EstadoCivil" FromRole="EstadoCivil" ToRole="Cliente" />
         </EntityType>
         <EntityType Name="EstadoPlanillaRendicion">
           <Key>
@@ -369,7 +336,6 @@
         </EntityType>
         <EntityContainer Name="DynamicBrokerEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CondFiscal" EntityType="Self.CondFiscal" />
-          <EntitySet Name="EstadoCivil" EntityType="Self.EstadoCivil" />
           <EntitySet Name="EstadoPlanillaRendicion" EntityType="Self.EstadoPlanillaRendicion" />
           <EntitySet Name="MedioPago" EntityType="Self.MedioPago" />
           <EntitySet Name="Rama" EntityType="Self.Rama" />
@@ -398,10 +364,6 @@
           <EntitySet Name="Recibo" EntityType="DynamicBrokerModel.Recibo" />
           <AssociationSet Name="FK_Cliente_CondFiscal" Association="DynamicBrokerModel.FK_Cliente_CondFiscal">
             <End Role="CondFiscal" EntitySet="CondFiscal" />
-            <End Role="Cliente" EntitySet="Cliente" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cliente_EstadoCivil" Association="DynamicBrokerModel.FK_Cliente_EstadoCivil">
-            <End Role="EstadoCivil" EntitySet="EstadoCivil" />
             <End Role="Cliente" EntitySet="Cliente" />
           </AssociationSet>
           <AssociationSet Name="FK_Recibo_Cliente" Association="DynamicBrokerModel.FK_Recibo_Cliente">
@@ -518,7 +480,6 @@
           <Property Name="FechaNac" Type="DateTime" Precision="0" />
           <Property Name="Domicilio" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="EstadoCivilId" Type="Int32" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="ActividadComercial" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="CondFiscalId" Type="Int32" Nullable="false" />
@@ -526,7 +487,6 @@
           <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="fechabaja" Type="DateTime" Precision="3" />
           <NavigationProperty Name="CondFiscal" Relationship="DynamicBrokerModel.FK_Cliente_CondFiscal" FromRole="Cliente" ToRole="CondFiscal" />
-          <NavigationProperty Name="EstadoCivil" Relationship="DynamicBrokerModel.FK_Cliente_EstadoCivil" FromRole="Cliente" ToRole="EstadoCivil" />
           <NavigationProperty Name="Recibo" Relationship="DynamicBrokerModel.FK_Recibo_Cliente" FromRole="Cliente" ToRole="Recibo" />
         </EntityType>
         <EntityType Name="Recibo">
@@ -560,18 +520,6 @@
             </Principal>
             <Dependent Role="Cliente">
               <PropertyRef Name="CondFiscalId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Cliente_EstadoCivil">
-          <End Type="DynamicBrokerModel.EstadoCivil" Role="EstadoCivil" Multiplicity="1" />
-          <End Type="DynamicBrokerModel.Cliente" Role="Cliente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EstadoCivil">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Cliente">
-              <PropertyRef Name="EstadoCivilId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -632,14 +580,6 @@
           <EntitySetMapping Name="CondFiscal">
             <EntityTypeMapping TypeName="DynamicBrokerModel.CondFiscal">
               <MappingFragment StoreEntitySet="CondFiscal">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EstadoCivil">
-            <EntityTypeMapping TypeName="DynamicBrokerModel.EstadoCivil">
-              <MappingFragment StoreEntitySet="EstadoCivil">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
               </MappingFragment>
@@ -735,7 +675,6 @@
                 <ScalarProperty Name="CondFiscalId" ColumnName="CondFiscalId" />
                 <ScalarProperty Name="ActividadComercial" ColumnName="ActividadComercial" />
                 <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="EstadoCivilId" ColumnName="EstadoCivilId" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
                 <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
                 <ScalarProperty Name="FechaNac" ColumnName="FechaNac" />

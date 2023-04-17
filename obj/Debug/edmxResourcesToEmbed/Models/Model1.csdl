@@ -8,14 +8,6 @@
     <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Cliente" Relationship="DynamicBrokerModel.FK_Cliente_CondFiscal" FromRole="CondFiscal" ToRole="Cliente" />
   </EntityType>
-  <EntityType Name="EstadoCivil">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Cliente" Relationship="DynamicBrokerModel.FK_Cliente_EstadoCivil" FromRole="EstadoCivil" ToRole="Cliente" />
-  </EntityType>
   <EntityType Name="EstadoPlanillaRendicion">
     <Key>
       <PropertyRef Name="Id" />
@@ -63,7 +55,6 @@
   </EntityType>
   <EntityContainer Name="DynamicBrokerEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CondFiscal" EntityType="Self.CondFiscal" />
-    <EntitySet Name="EstadoCivil" EntityType="Self.EstadoCivil" />
     <EntitySet Name="EstadoPlanillaRendicion" EntityType="Self.EstadoPlanillaRendicion" />
     <EntitySet Name="MedioPago" EntityType="Self.MedioPago" />
     <EntitySet Name="Rama" EntityType="Self.Rama" />
@@ -92,10 +83,6 @@
     <EntitySet Name="Recibo" EntityType="DynamicBrokerModel.Recibo" />
     <AssociationSet Name="FK_Cliente_CondFiscal" Association="DynamicBrokerModel.FK_Cliente_CondFiscal">
       <End Role="CondFiscal" EntitySet="CondFiscal" />
-      <End Role="Cliente" EntitySet="Cliente" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Cliente_EstadoCivil" Association="DynamicBrokerModel.FK_Cliente_EstadoCivil">
-      <End Role="EstadoCivil" EntitySet="EstadoCivil" />
       <End Role="Cliente" EntitySet="Cliente" />
     </AssociationSet>
     <AssociationSet Name="FK_Recibo_Cliente" Association="DynamicBrokerModel.FK_Recibo_Cliente">
@@ -212,7 +199,6 @@
     <Property Name="FechaNac" Type="DateTime" Precision="0" />
     <Property Name="Domicilio" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="EstadoCivilId" Type="Int32" Nullable="false" />
     <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="ActividadComercial" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="CondFiscalId" Type="Int32" Nullable="false" />
@@ -220,7 +206,6 @@
     <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="fechabaja" Type="DateTime" Precision="3" />
     <NavigationProperty Name="CondFiscal" Relationship="DynamicBrokerModel.FK_Cliente_CondFiscal" FromRole="Cliente" ToRole="CondFiscal" />
-    <NavigationProperty Name="EstadoCivil" Relationship="DynamicBrokerModel.FK_Cliente_EstadoCivil" FromRole="Cliente" ToRole="EstadoCivil" />
     <NavigationProperty Name="Recibo" Relationship="DynamicBrokerModel.FK_Recibo_Cliente" FromRole="Cliente" ToRole="Recibo" />
   </EntityType>
   <EntityType Name="Recibo">
@@ -254,18 +239,6 @@
       </Principal>
       <Dependent Role="Cliente">
         <PropertyRef Name="CondFiscalId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Cliente_EstadoCivil">
-    <End Type="DynamicBrokerModel.EstadoCivil" Role="EstadoCivil" Multiplicity="1" />
-    <End Type="DynamicBrokerModel.Cliente" Role="Cliente" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EstadoCivil">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Cliente">
-        <PropertyRef Name="EstadoCivilId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
